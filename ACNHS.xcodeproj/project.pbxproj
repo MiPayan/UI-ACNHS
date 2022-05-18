@@ -1,0 +1,886 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		372695AB282E4A8100F2CC3F /* BodySeaCreatureDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372695AA282E4A8100F2CC3F /* BodySeaCreatureDetailsView.swift */; };
+		372695AD282E4B0100F2CC3F /* SeaCreatureDetailsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372695AC282E4B0100F2CC3F /* SeaCreatureDetailsGridView.swift */; };
+		372695B1282E51C700F2CC3F /* FooterDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372695B0282E51C700F2CC3F /* FooterDetailsView.swift */; };
+		372695B3282E54FC00F2CC3F /* BugDetailsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372695B2282E54FC00F2CC3F /* BugDetailsGridView.swift */; };
+		372695B5282E550E00F2CC3F /* BodyBugDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372695B4282E550E00F2CC3F /* BodyBugDetailsView.swift */; };
+		372695B7282E5D5A00F2CC3F /* BodyFossilDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372695B6282E5D5A00F2CC3F /* BodyFossilDetailsView.swift */; };
+		372695B9282E5D6800F2CC3F /* FossilDetailsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372695B8282E5D6800F2CC3F /* FossilDetailsGridView.swift */; };
+		373380C528252CB5005FE900 /* FinkHeavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 373380C428252CB5005FE900 /* FinkHeavy.ttf */; };
+		3763B65D2823CDD20026D594 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3763B65C2823CDD20026D594 /* Constant.swift */; };
+		3763B6602823CE7C0026D594 /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3763B65F2823CE7C0026D594 /* CodableBundleExtension.swift */; };
+		37662A7B282D0F2100217ED5 /* GlobalRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37662A7A282D0F2100217ED5 /* GlobalRowView.swift */; };
+		37662A7D282D164D00217ED5 /* HeaderDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37662A7C282D164D00217ED5 /* HeaderDetailsView.swift */; };
+		376B88BF2822A9190080EF5A /* Fishes.json in Resources */ = {isa = PBXBuildFile; fileRef = 376B88BE2822A9190080EF5A /* Fishes.json */; };
+		377158C42829395C003F6C73 /* DetailsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377158C32829395C003F6C73 /* DetailsRowView.swift */; };
+		377158C828294B41003F6C73 /* FishDetailsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377158C728294B41003F6C73 /* FishDetailsGridView.swift */; };
+		37936507282BEC07005B054A /* BodyFishDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37936506282BEC07005B054A /* BodyFishDetailsView.swift */; };
+		379D0127282159E90087F2A9 /* ACNHSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D0126282159E90087F2A9 /* ACNHSApp.swift */; };
+		379D012B282159EA0087F2A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 379D012A282159EA0087F2A9 /* Assets.xcassets */; };
+		379D012E282159EA0087F2A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 379D012D282159EA0087F2A9 /* Preview Assets.xcassets */; };
+		379D0138282159EB0087F2A9 /* ACNHSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D0137282159EB0087F2A9 /* ACNHSTests.swift */; };
+		379D0142282159EB0087F2A9 /* ACNHSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D0141282159EB0087F2A9 /* ACNHSUITests.swift */; };
+		379D0144282159EB0087F2A9 /* ACNHSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D0143282159EB0087F2A9 /* ACNHSUITestsLaunchTests.swift */; };
+		379D015728215A000087F2A9 /* BugsGlobalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D015028215A000087F2A9 /* BugsGlobalView.swift */; };
+		379D015828215A000087F2A9 /* PresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D015128215A000087F2A9 /* PresentationView.swift */; };
+		379D015928215A000087F2A9 /* FossilsGlobalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D015228215A000087F2A9 /* FossilsGlobalView.swift */; };
+		379D015A28215A000087F2A9 /* Villager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D015328215A000087F2A9 /* Villager.swift */; };
+		379D015B28215A000087F2A9 /* SeaCreatureGlobalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D015428215A000087F2A9 /* SeaCreatureGlobalView.swift */; };
+		379D015C28215A000087F2A9 /* FishesGlobalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D015528215A000087F2A9 /* FishesGlobalView.swift */; };
+		379D015D28215A000087F2A9 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D015628215A000087F2A9 /* TabBarView.swift */; };
+		379D016128215E9B0087F2A9 /* FishData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D016028215E9B0087F2A9 /* FishData.swift */; };
+		379D01642821600B0087F2A9 /* FishAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D01632821600B0087F2A9 /* FishAvailability.swift */; };
+		379D0166282160420087F2A9 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D0165282160420087F2A9 /* Name.swift */; };
+		379D0169282165070087F2A9 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D0168282165070087F2A9 /* Networking.swift */; };
+		379D016B2821659E0087F2A9 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D016A2821659D0087F2A9 /* NetworkingError.swift */; };
+		379D016D2821684D0087F2A9 /* ACNHService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D016C2821684D0087F2A9 /* ACNHService.swift */; };
+		379D0174282175FC0087F2A9 /* SeaCreatureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D0173282175FC0087F2A9 /* SeaCreatureData.swift */; };
+		379D0176282177440087F2A9 /* SeaAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D0175282177440087F2A9 /* SeaAvailability.swift */; };
+		379D0178282178820087F2A9 /* BugData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D0177282178820087F2A9 /* BugData.swift */; };
+		379D017A2821790B0087F2A9 /* BugAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D01792821790B0087F2A9 /* BugAvailability.swift */; };
+		379D017C28217B740087F2A9 /* FossilData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D017B28217B740087F2A9 /* FossilData.swift */; };
+		379D017E28217BE50087F2A9 /* VillagerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D017D28217BE50087F2A9 /* VillagerData.swift */; };
+		37B12A04282D3EF2003583F1 /* Bugs.json in Resources */ = {isa = PBXBuildFile; fileRef = 37B12A03282D3EF2003583F1 /* Bugs.json */; };
+		37B12A06282D3FA2003583F1 /* BugDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B12A05282D3FA2003583F1 /* BugDetailsView.swift */; };
+		37B12A0A282D4D51003583F1 /* Fossils.json in Resources */ = {isa = PBXBuildFile; fileRef = 37B12A09282D4D51003583F1 /* Fossils.json */; };
+		37B12A11282D4EA9003583F1 /* SeaCreatures.json in Resources */ = {isa = PBXBuildFile; fileRef = 37B12A10282D4EA9003583F1 /* SeaCreatures.json */; };
+		37B12A13282D5000003583F1 /* FossilDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B12A12282D5000003583F1 /* FossilDetailsView.swift */; };
+		37B12A16282D5234003583F1 /* SeaCreatureDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B12A15282D5234003583F1 /* SeaCreatureDetailsView.swift */; };
+		37C2FC2A28254ED200D3F282 /* FishDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2FC2928254ED200D3F282 /* FishDetailsView.swift */; };
+		37D9C712282914870079BBFC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D9C711282914870079BBFC /* String.swift */; };
+		37FD00B12834D872003F6353 /* FishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FD00B02834D872003F6353 /* FishViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		379D0134282159EB0087F2A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 379D011B282159E90087F2A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 379D0122282159E90087F2A9;
+			remoteInfo = ACNHS;
+		};
+		379D013E282159EB0087F2A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 379D011B282159E90087F2A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 379D0122282159E90087F2A9;
+			remoteInfo = ACNHS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		372695AA282E4A8100F2CC3F /* BodySeaCreatureDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySeaCreatureDetailsView.swift; sourceTree = "<group>"; };
+		372695AC282E4B0100F2CC3F /* SeaCreatureDetailsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreatureDetailsGridView.swift; sourceTree = "<group>"; };
+		372695B0282E51C700F2CC3F /* FooterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterDetailsView.swift; sourceTree = "<group>"; };
+		372695B2282E54FC00F2CC3F /* BugDetailsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugDetailsGridView.swift; sourceTree = "<group>"; };
+		372695B4282E550E00F2CC3F /* BodyBugDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyBugDetailsView.swift; sourceTree = "<group>"; };
+		372695B6282E5D5A00F2CC3F /* BodyFossilDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyFossilDetailsView.swift; sourceTree = "<group>"; };
+		372695B8282E5D6800F2CC3F /* FossilDetailsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FossilDetailsGridView.swift; sourceTree = "<group>"; };
+		373380C428252CB5005FE900 /* FinkHeavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FinkHeavy.ttf; sourceTree = "<group>"; };
+		373380C628252CEC005FE900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3763B65C2823CDD20026D594 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		3763B65F2823CE7C0026D594 /* CodableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
+		37662A7A282D0F2100217ED5 /* GlobalRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalRowView.swift; sourceTree = "<group>"; };
+		37662A7C282D164D00217ED5 /* HeaderDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDetailsView.swift; sourceTree = "<group>"; };
+		376B88BE2822A9190080EF5A /* Fishes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fishes.json; sourceTree = "<group>"; };
+		377158C32829395C003F6C73 /* DetailsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRowView.swift; sourceTree = "<group>"; };
+		377158C728294B41003F6C73 /* FishDetailsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishDetailsGridView.swift; sourceTree = "<group>"; };
+		37936506282BEC07005B054A /* BodyFishDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyFishDetailsView.swift; sourceTree = "<group>"; };
+		379D0123282159E90087F2A9 /* ACNHS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ACNHS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		379D0126282159E90087F2A9 /* ACNHSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHSApp.swift; sourceTree = "<group>"; };
+		379D012A282159EA0087F2A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		379D012D282159EA0087F2A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		379D0133282159EB0087F2A9 /* ACNHSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACNHSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		379D0137282159EB0087F2A9 /* ACNHSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHSTests.swift; sourceTree = "<group>"; };
+		379D013D282159EB0087F2A9 /* ACNHSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ACNHSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		379D0141282159EB0087F2A9 /* ACNHSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHSUITests.swift; sourceTree = "<group>"; };
+		379D0143282159EB0087F2A9 /* ACNHSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		379D015028215A000087F2A9 /* BugsGlobalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BugsGlobalView.swift; sourceTree = "<group>"; };
+		379D015128215A000087F2A9 /* PresentationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationView.swift; sourceTree = "<group>"; };
+		379D015228215A000087F2A9 /* FossilsGlobalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FossilsGlobalView.swift; sourceTree = "<group>"; };
+		379D015328215A000087F2A9 /* Villager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Villager.swift; sourceTree = "<group>"; };
+		379D015428215A000087F2A9 /* SeaCreatureGlobalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeaCreatureGlobalView.swift; sourceTree = "<group>"; };
+		379D015528215A000087F2A9 /* FishesGlobalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FishesGlobalView.swift; sourceTree = "<group>"; };
+		379D015628215A000087F2A9 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		379D016028215E9B0087F2A9 /* FishData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishData.swift; sourceTree = "<group>"; };
+		379D01632821600B0087F2A9 /* FishAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishAvailability.swift; sourceTree = "<group>"; };
+		379D0165282160420087F2A9 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
+		379D0168282165070087F2A9 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		379D016A2821659D0087F2A9 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		379D016C2821684D0087F2A9 /* ACNHService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHService.swift; sourceTree = "<group>"; };
+		379D0173282175FC0087F2A9 /* SeaCreatureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreatureData.swift; sourceTree = "<group>"; };
+		379D0175282177440087F2A9 /* SeaAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaAvailability.swift; sourceTree = "<group>"; };
+		379D0177282178820087F2A9 /* BugData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugData.swift; sourceTree = "<group>"; };
+		379D01792821790B0087F2A9 /* BugAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugAvailability.swift; sourceTree = "<group>"; };
+		379D017B28217B740087F2A9 /* FossilData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FossilData.swift; sourceTree = "<group>"; };
+		379D017D28217BE50087F2A9 /* VillagerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VillagerData.swift; sourceTree = "<group>"; };
+		37B12A03282D3EF2003583F1 /* Bugs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Bugs.json; sourceTree = "<group>"; };
+		37B12A05282D3FA2003583F1 /* BugDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugDetailsView.swift; sourceTree = "<group>"; };
+		37B12A09282D4D51003583F1 /* Fossils.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fossils.json; sourceTree = "<group>"; };
+		37B12A10282D4EA9003583F1 /* SeaCreatures.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SeaCreatures.json; sourceTree = "<group>"; };
+		37B12A12282D5000003583F1 /* FossilDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FossilDetailsView.swift; sourceTree = "<group>"; };
+		37B12A15282D5234003583F1 /* SeaCreatureDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreatureDetailsView.swift; sourceTree = "<group>"; };
+		37C2FC2928254ED200D3F282 /* FishDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishDetailsView.swift; sourceTree = "<group>"; };
+		37D9C711282914870079BBFC /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		37FD00B02834D872003F6353 /* FishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		379D0120282159E90087F2A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		379D0130282159EB0087F2A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		379D013A282159EB0087F2A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		373380C228252C8D005FE900 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				379D012A282159EA0087F2A9 /* Assets.xcassets */,
+				373380C428252CB5005FE900 /* FinkHeavy.ttf */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		3763B65E2823CE510026D594 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3763B65F2823CE7C0026D594 /* CodableBundleExtension.swift */,
+				37D9C711282914870079BBFC /* String.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		37662A79282D082F00217ED5 /* Bug */ = {
+			isa = PBXGroup;
+			children = (
+				379D015028215A000087F2A9 /* BugsGlobalView.swift */,
+				37B12A05282D3FA2003583F1 /* BugDetailsView.swift */,
+				372695B4282E550E00F2CC3F /* BodyBugDetailsView.swift */,
+				372695B2282E54FC00F2CC3F /* BugDetailsGridView.swift */,
+			);
+			path = Bug;
+			sourceTree = "<group>";
+		};
+		379D011A282159E90087F2A9 = {
+			isa = PBXGroup;
+			children = (
+				379D0125282159E90087F2A9 /* ACNHS */,
+				379D0136282159EB0087F2A9 /* ACNHSTests */,
+				379D0140282159EB0087F2A9 /* ACNHSUITests */,
+				379D0124282159E90087F2A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		379D0124282159E90087F2A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				379D0123282159E90087F2A9 /* ACNHS.app */,
+				379D0133282159EB0087F2A9 /* ACNHSTests.xctest */,
+				379D013D282159EB0087F2A9 /* ACNHSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		379D0125282159E90087F2A9 /* ACNHS */ = {
+			isa = PBXGroup;
+			children = (
+				373380C628252CEC005FE900 /* Info.plist */,
+				3763B65C2823CDD20026D594 /* Constant.swift */,
+				379D0126282159E90087F2A9 /* ACNHSApp.swift */,
+				373380C228252C8D005FE900 /* Utility */,
+				3763B65E2823CE510026D594 /* Extension */,
+				379D0167282164F70087F2A9 /* Networking */,
+				37FD00AF2834D85A003F6353 /* ViewModel */,
+				379D015F28215E820087F2A9 /* Model */,
+				379D0165282160420087F2A9 /* Name.swift */,
+				379D015E28215BB90087F2A9 /* View */,
+				379D012C282159EA0087F2A9 /* Preview Content */,
+			);
+			path = ACNHS;
+			sourceTree = "<group>";
+		};
+		379D012C282159EA0087F2A9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				379D012D282159EA0087F2A9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		379D0136282159EB0087F2A9 /* ACNHSTests */ = {
+			isa = PBXGroup;
+			children = (
+				379D0137282159EB0087F2A9 /* ACNHSTests.swift */,
+			);
+			path = ACNHSTests;
+			sourceTree = "<group>";
+		};
+		379D0140282159EB0087F2A9 /* ACNHSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				379D0141282159EB0087F2A9 /* ACNHSUITests.swift */,
+				379D0143282159EB0087F2A9 /* ACNHSUITestsLaunchTests.swift */,
+			);
+			path = ACNHSUITests;
+			sourceTree = "<group>";
+		};
+		379D015E28215BB90087F2A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				379D015128215A000087F2A9 /* PresentationView.swift */,
+				379D015628215A000087F2A9 /* TabBarView.swift */,
+				37662A7A282D0F2100217ED5 /* GlobalRowView.swift */,
+				377158C32829395C003F6C73 /* DetailsRowView.swift */,
+				37662A7C282D164D00217ED5 /* HeaderDetailsView.swift */,
+				372695B0282E51C700F2CC3F /* FooterDetailsView.swift */,
+				37C2FC2728254E9F00D3F282 /* Fish */,
+				37B12A14282D50E0003583F1 /* SeaCreature */,
+				37662A79282D082F00217ED5 /* Bug */,
+				37B12A0B282D4D98003583F1 /* Fossils */,
+				379D015328215A000087F2A9 /* Villager.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		379D015F28215E820087F2A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				379D016E2821718B0087F2A9 /* FishData */,
+				379D0171282172960087F2A9 /* SeaCreatureData */,
+				379D01702821728C0087F2A9 /* BugData */,
+				379D016F2821727C0087F2A9 /* Fossil */,
+				379D01722821729F0087F2A9 /* Villager */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		379D0167282164F70087F2A9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				379D0168282165070087F2A9 /* Networking.swift */,
+				379D016A2821659D0087F2A9 /* NetworkingError.swift */,
+				379D016C2821684D0087F2A9 /* ACNHService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		379D016E2821718B0087F2A9 /* FishData */ = {
+			isa = PBXGroup;
+			children = (
+				379D016028215E9B0087F2A9 /* FishData.swift */,
+				379D01632821600B0087F2A9 /* FishAvailability.swift */,
+				376B88BE2822A9190080EF5A /* Fishes.json */,
+			);
+			path = FishData;
+			sourceTree = "<group>";
+		};
+		379D016F2821727C0087F2A9 /* Fossil */ = {
+			isa = PBXGroup;
+			children = (
+				379D017B28217B740087F2A9 /* FossilData.swift */,
+				37B12A09282D4D51003583F1 /* Fossils.json */,
+			);
+			path = Fossil;
+			sourceTree = "<group>";
+		};
+		379D01702821728C0087F2A9 /* BugData */ = {
+			isa = PBXGroup;
+			children = (
+				379D0177282178820087F2A9 /* BugData.swift */,
+				379D01792821790B0087F2A9 /* BugAvailability.swift */,
+				37B12A03282D3EF2003583F1 /* Bugs.json */,
+			);
+			path = BugData;
+			sourceTree = "<group>";
+		};
+		379D0171282172960087F2A9 /* SeaCreatureData */ = {
+			isa = PBXGroup;
+			children = (
+				379D0173282175FC0087F2A9 /* SeaCreatureData.swift */,
+				379D0175282177440087F2A9 /* SeaAvailability.swift */,
+				37B12A10282D4EA9003583F1 /* SeaCreatures.json */,
+			);
+			path = SeaCreatureData;
+			sourceTree = "<group>";
+		};
+		379D01722821729F0087F2A9 /* Villager */ = {
+			isa = PBXGroup;
+			children = (
+				379D017D28217BE50087F2A9 /* VillagerData.swift */,
+			);
+			path = Villager;
+			sourceTree = "<group>";
+		};
+		37B12A0B282D4D98003583F1 /* Fossils */ = {
+			isa = PBXGroup;
+			children = (
+				379D015228215A000087F2A9 /* FossilsGlobalView.swift */,
+				37B12A12282D5000003583F1 /* FossilDetailsView.swift */,
+				372695B6282E5D5A00F2CC3F /* BodyFossilDetailsView.swift */,
+				372695B8282E5D6800F2CC3F /* FossilDetailsGridView.swift */,
+			);
+			path = Fossils;
+			sourceTree = "<group>";
+		};
+		37B12A14282D50E0003583F1 /* SeaCreature */ = {
+			isa = PBXGroup;
+			children = (
+				379D015428215A000087F2A9 /* SeaCreatureGlobalView.swift */,
+				37B12A15282D5234003583F1 /* SeaCreatureDetailsView.swift */,
+				372695AA282E4A8100F2CC3F /* BodySeaCreatureDetailsView.swift */,
+				372695AC282E4B0100F2CC3F /* SeaCreatureDetailsGridView.swift */,
+			);
+			path = SeaCreature;
+			sourceTree = "<group>";
+		};
+		37C2FC2728254E9F00D3F282 /* Fish */ = {
+			isa = PBXGroup;
+			children = (
+				379D015528215A000087F2A9 /* FishesGlobalView.swift */,
+				37C2FC2928254ED200D3F282 /* FishDetailsView.swift */,
+				37936506282BEC07005B054A /* BodyFishDetailsView.swift */,
+				377158C728294B41003F6C73 /* FishDetailsGridView.swift */,
+			);
+			path = Fish;
+			sourceTree = "<group>";
+		};
+		37FD00AF2834D85A003F6353 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				37FD00B02834D872003F6353 /* FishViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		379D0122282159E90087F2A9 /* ACNHS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 379D0147282159EB0087F2A9 /* Build configuration list for PBXNativeTarget "ACNHS" */;
+			buildPhases = (
+				379D011F282159E90087F2A9 /* Sources */,
+				379D0120282159E90087F2A9 /* Frameworks */,
+				379D0121282159E90087F2A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ACNHS;
+			productName = ACNHS;
+			productReference = 379D0123282159E90087F2A9 /* ACNHS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		379D0132282159EB0087F2A9 /* ACNHSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 379D014A282159EB0087F2A9 /* Build configuration list for PBXNativeTarget "ACNHSTests" */;
+			buildPhases = (
+				379D012F282159EB0087F2A9 /* Sources */,
+				379D0130282159EB0087F2A9 /* Frameworks */,
+				379D0131282159EB0087F2A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				379D0135282159EB0087F2A9 /* PBXTargetDependency */,
+			);
+			name = ACNHSTests;
+			productName = ACNHSTests;
+			productReference = 379D0133282159EB0087F2A9 /* ACNHSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		379D013C282159EB0087F2A9 /* ACNHSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 379D014D282159EB0087F2A9 /* Build configuration list for PBXNativeTarget "ACNHSUITests" */;
+			buildPhases = (
+				379D0139282159EB0087F2A9 /* Sources */,
+				379D013A282159EB0087F2A9 /* Frameworks */,
+				379D013B282159EB0087F2A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				379D013F282159EB0087F2A9 /* PBXTargetDependency */,
+			);
+			name = ACNHSUITests;
+			productName = ACNHSUITests;
+			productReference = 379D013D282159EB0087F2A9 /* ACNHSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		379D011B282159E90087F2A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					379D0122282159E90087F2A9 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					379D0132282159EB0087F2A9 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 379D0122282159E90087F2A9;
+					};
+					379D013C282159EB0087F2A9 = {
+						CreatedOnToolsVersion = 13.3.1;
+						TestTargetID = 379D0122282159E90087F2A9;
+					};
+				};
+			};
+			buildConfigurationList = 379D011E282159E90087F2A9 /* Build configuration list for PBXProject "ACNHS" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 379D011A282159E90087F2A9;
+			packageReferences = (
+			);
+			productRefGroup = 379D0124282159E90087F2A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				379D0122282159E90087F2A9 /* ACNHS */,
+				379D0132282159EB0087F2A9 /* ACNHSTests */,
+				379D013C282159EB0087F2A9 /* ACNHSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		379D0121282159E90087F2A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				379D012E282159EA0087F2A9 /* Preview Assets.xcassets in Resources */,
+				37B12A04282D3EF2003583F1 /* Bugs.json in Resources */,
+				376B88BF2822A9190080EF5A /* Fishes.json in Resources */,
+				373380C528252CB5005FE900 /* FinkHeavy.ttf in Resources */,
+				379D012B282159EA0087F2A9 /* Assets.xcassets in Resources */,
+				37B12A0A282D4D51003583F1 /* Fossils.json in Resources */,
+				37B12A11282D4EA9003583F1 /* SeaCreatures.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		379D0131282159EB0087F2A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		379D013B282159EB0087F2A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		379D011F282159E90087F2A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				372695B1282E51C700F2CC3F /* FooterDetailsView.swift in Sources */,
+				379D015B28215A000087F2A9 /* SeaCreatureGlobalView.swift in Sources */,
+				37662A7B282D0F2100217ED5 /* GlobalRowView.swift in Sources */,
+				372695B7282E5D5A00F2CC3F /* BodyFossilDetailsView.swift in Sources */,
+				379D016D2821684D0087F2A9 /* ACNHService.swift in Sources */,
+				372695B3282E54FC00F2CC3F /* BugDetailsGridView.swift in Sources */,
+				37B12A13282D5000003583F1 /* FossilDetailsView.swift in Sources */,
+				379D015D28215A000087F2A9 /* TabBarView.swift in Sources */,
+				379D016B2821659E0087F2A9 /* NetworkingError.swift in Sources */,
+				379D015828215A000087F2A9 /* PresentationView.swift in Sources */,
+				379D0169282165070087F2A9 /* Networking.swift in Sources */,
+				379D015728215A000087F2A9 /* BugsGlobalView.swift in Sources */,
+				37FD00B12834D872003F6353 /* FishViewModel.swift in Sources */,
+				372695AB282E4A8100F2CC3F /* BodySeaCreatureDetailsView.swift in Sources */,
+				372695B9282E5D6800F2CC3F /* FossilDetailsGridView.swift in Sources */,
+				379D0174282175FC0087F2A9 /* SeaCreatureData.swift in Sources */,
+				379D0127282159E90087F2A9 /* ACNHSApp.swift in Sources */,
+				372695AD282E4B0100F2CC3F /* SeaCreatureDetailsGridView.swift in Sources */,
+				379D015928215A000087F2A9 /* FossilsGlobalView.swift in Sources */,
+				379D015C28215A000087F2A9 /* FishesGlobalView.swift in Sources */,
+				377158C828294B41003F6C73 /* FishDetailsGridView.swift in Sources */,
+				379D015A28215A000087F2A9 /* Villager.swift in Sources */,
+				377158C42829395C003F6C73 /* DetailsRowView.swift in Sources */,
+				37D9C712282914870079BBFC /* String.swift in Sources */,
+				37B12A06282D3FA2003583F1 /* BugDetailsView.swift in Sources */,
+				3763B6602823CE7C0026D594 /* CodableBundleExtension.swift in Sources */,
+				37662A7D282D164D00217ED5 /* HeaderDetailsView.swift in Sources */,
+				379D01642821600B0087F2A9 /* FishAvailability.swift in Sources */,
+				372695B5282E550E00F2CC3F /* BodyBugDetailsView.swift in Sources */,
+				379D0176282177440087F2A9 /* SeaAvailability.swift in Sources */,
+				37936507282BEC07005B054A /* BodyFishDetailsView.swift in Sources */,
+				3763B65D2823CDD20026D594 /* Constant.swift in Sources */,
+				379D017C28217B740087F2A9 /* FossilData.swift in Sources */,
+				379D0166282160420087F2A9 /* Name.swift in Sources */,
+				379D017A2821790B0087F2A9 /* BugAvailability.swift in Sources */,
+				37C2FC2A28254ED200D3F282 /* FishDetailsView.swift in Sources */,
+				379D017E28217BE50087F2A9 /* VillagerData.swift in Sources */,
+				379D0178282178820087F2A9 /* BugData.swift in Sources */,
+				37B12A16282D5234003583F1 /* SeaCreatureDetailsView.swift in Sources */,
+				379D016128215E9B0087F2A9 /* FishData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		379D012F282159EB0087F2A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				379D0138282159EB0087F2A9 /* ACNHSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		379D0139282159EB0087F2A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				379D0144282159EB0087F2A9 /* ACNHSUITestsLaunchTests.swift in Sources */,
+				379D0142282159EB0087F2A9 /* ACNHSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		379D0135282159EB0087F2A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 379D0122282159E90087F2A9 /* ACNHS */;
+			targetProxy = 379D0134282159EB0087F2A9 /* PBXContainerItemProxy */;
+		};
+		379D013F282159EB0087F2A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 379D0122282159E90087F2A9 /* ACNHS */;
+			targetProxy = 379D013E282159EB0087F2A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		379D0145282159EB0087F2A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		379D0146282159EB0087F2A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		379D0148282159EB0087F2A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ACNHS/Preview Content\"";
+				DEVELOPMENT_TEAM = 78PX5NWF8H;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ACNHS/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayanMickael.ACNHS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		379D0149282159EB0087F2A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ACNHS/Preview Content\"";
+				DEVELOPMENT_TEAM = 78PX5NWF8H;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ACNHS/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayanMickael.ACNHS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		379D014B282159EB0087F2A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 78PX5NWF8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayanMickael.ACNHSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ACNHS.app/ACNHS";
+			};
+			name = Debug;
+		};
+		379D014C282159EB0087F2A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 78PX5NWF8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayanMickael.ACNHSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ACNHS.app/ACNHS";
+			};
+			name = Release;
+		};
+		379D014E282159EB0087F2A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 78PX5NWF8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayanMickael.ACNHSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ACNHS;
+			};
+			name = Debug;
+		};
+		379D014F282159EB0087F2A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 78PX5NWF8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PayanMickael.ACNHSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ACNHS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		379D011E282159E90087F2A9 /* Build configuration list for PBXProject "ACNHS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				379D0145282159EB0087F2A9 /* Debug */,
+				379D0146282159EB0087F2A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		379D0147282159EB0087F2A9 /* Build configuration list for PBXNativeTarget "ACNHS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				379D0148282159EB0087F2A9 /* Debug */,
+				379D0149282159EB0087F2A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		379D014A282159EB0087F2A9 /* Build configuration list for PBXNativeTarget "ACNHSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				379D014B282159EB0087F2A9 /* Debug */,
+				379D014C282159EB0087F2A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		379D014D282159EB0087F2A9 /* Build configuration list for PBXNativeTarget "ACNHSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				379D014E282159EB0087F2A9 /* Debug */,
+				379D014F282159EB0087F2A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 379D011B282159E90087F2A9 /* Project object */;
+}
