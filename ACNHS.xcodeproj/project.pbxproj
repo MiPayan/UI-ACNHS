@@ -14,6 +14,7 @@
 		372695B5282E550E00F2CC3F /* BodyBugDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372695B4282E550E00F2CC3F /* BodyBugDetailsView.swift */; };
 		372695B7282E5D5A00F2CC3F /* BodyFossilDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372695B6282E5D5A00F2CC3F /* BodyFossilDetailsView.swift */; };
 		372695B9282E5D6800F2CC3F /* FossilDetailsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372695B8282E5D6800F2CC3F /* FossilDetailsGridView.swift */; };
+		372800C02836342A00F857FB /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372800BF2836342A00F857FB /* ErrorView.swift */; };
 		373380C528252CB5005FE900 /* FinkHeavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 373380C428252CB5005FE900 /* FinkHeavy.ttf */; };
 		3763B65D2823CDD20026D594 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3763B65C2823CDD20026D594 /* Constant.swift */; };
 		3763B6602823CE7C0026D594 /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3763B65F2823CE7C0026D594 /* CodableBundleExtension.swift */; };
@@ -55,6 +56,10 @@
 		37B12A13282D5000003583F1 /* FossilDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B12A12282D5000003583F1 /* FossilDetailsView.swift */; };
 		37B12A16282D5234003583F1 /* SeaCreatureDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B12A15282D5234003583F1 /* SeaCreatureDetailsView.swift */; };
 		37C2FC2A28254ED200D3F282 /* FishDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2FC2928254ED200D3F282 /* FishDetailsView.swift */; };
+		37D5A4802837911600826064 /* OwnedFishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D5A47F2837911600826064 /* OwnedFishView.swift */; };
+		37D5A4832837929000826064 /* GlobalOwnedRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D5A4822837929000826064 /* GlobalOwnedRowView.swift */; };
+		37D5A4852837960000826064 /* OwnedBugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D5A4842837960000826064 /* OwnedBugView.swift */; };
+		37D5A487283796B600826064 /* BugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D5A486283796B600826064 /* BugViewModel.swift */; };
 		37D9C712282914870079BBFC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D9C711282914870079BBFC /* String.swift */; };
 		37FD00B12834D872003F6353 /* FishViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FD00B02834D872003F6353 /* FishViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +89,7 @@
 		372695B4282E550E00F2CC3F /* BodyBugDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyBugDetailsView.swift; sourceTree = "<group>"; };
 		372695B6282E5D5A00F2CC3F /* BodyFossilDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyFossilDetailsView.swift; sourceTree = "<group>"; };
 		372695B8282E5D6800F2CC3F /* FossilDetailsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FossilDetailsGridView.swift; sourceTree = "<group>"; };
+		372800BF2836342A00F857FB /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		373380C428252CB5005FE900 /* FinkHeavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FinkHeavy.ttf; sourceTree = "<group>"; };
 		373380C628252CEC005FE900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3763B65C2823CDD20026D594 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -129,6 +135,10 @@
 		37B12A12282D5000003583F1 /* FossilDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FossilDetailsView.swift; sourceTree = "<group>"; };
 		37B12A15282D5234003583F1 /* SeaCreatureDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreatureDetailsView.swift; sourceTree = "<group>"; };
 		37C2FC2928254ED200D3F282 /* FishDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishDetailsView.swift; sourceTree = "<group>"; };
+		37D5A47F2837911600826064 /* OwnedFishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedFishView.swift; sourceTree = "<group>"; };
+		37D5A4822837929000826064 /* GlobalOwnedRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalOwnedRowView.swift; sourceTree = "<group>"; };
+		37D5A4842837960000826064 /* OwnedBugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedBugView.swift; sourceTree = "<group>"; };
+		37D5A486283796B600826064 /* BugViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugViewModel.swift; sourceTree = "<group>"; };
 		37D9C711282914870079BBFC /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		37FD00B02834D872003F6353 /* FishViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -262,8 +272,10 @@
 				37C2FC2728254E9F00D3F282 /* Fish */,
 				37B12A14282D50E0003583F1 /* SeaCreature */,
 				37662A79282D082F00217ED5 /* Bug */,
-				37B12A0B282D4D98003583F1 /* Fossils */,
-				379D015328215A000087F2A9 /* Villager.swift */,
+				37B12A0B282D4D98003583F1 /* Fossil */,
+				37D5A47C28378FF600826064 /* Villager */,
+				37D5A4812837911D00826064 /* Owned */,
+				372800BF2836342A00F857FB /* ErrorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -337,7 +349,7 @@
 			path = Villager;
 			sourceTree = "<group>";
 		};
-		37B12A0B282D4D98003583F1 /* Fossils */ = {
+		37B12A0B282D4D98003583F1 /* Fossil */ = {
 			isa = PBXGroup;
 			children = (
 				379D015228215A000087F2A9 /* FossilsGlobalView.swift */,
@@ -345,7 +357,7 @@
 				372695B6282E5D5A00F2CC3F /* BodyFossilDetailsView.swift */,
 				372695B8282E5D6800F2CC3F /* FossilDetailsGridView.swift */,
 			);
-			path = Fossils;
+			path = Fossil;
 			sourceTree = "<group>";
 		};
 		37B12A14282D50E0003583F1 /* SeaCreature */ = {
@@ -370,10 +382,29 @@
 			path = Fish;
 			sourceTree = "<group>";
 		};
+		37D5A47C28378FF600826064 /* Villager */ = {
+			isa = PBXGroup;
+			children = (
+				379D015328215A000087F2A9 /* Villager.swift */,
+			);
+			path = Villager;
+			sourceTree = "<group>";
+		};
+		37D5A4812837911D00826064 /* Owned */ = {
+			isa = PBXGroup;
+			children = (
+				37D5A47F2837911600826064 /* OwnedFishView.swift */,
+				37D5A4842837960000826064 /* OwnedBugView.swift */,
+				37D5A4822837929000826064 /* GlobalOwnedRowView.swift */,
+			);
+			path = Owned;
+			sourceTree = "<group>";
+		};
 		37FD00AF2834D85A003F6353 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				37FD00B02834D872003F6353 /* FishViewModel.swift */,
+				37D5A486283796B600826064 /* BugViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -533,10 +564,12 @@
 				379D0174282175FC0087F2A9 /* SeaCreatureData.swift in Sources */,
 				379D0127282159E90087F2A9 /* ACNHSApp.swift in Sources */,
 				372695AD282E4B0100F2CC3F /* SeaCreatureDetailsGridView.swift in Sources */,
+				37D5A4802837911600826064 /* OwnedFishView.swift in Sources */,
 				379D015928215A000087F2A9 /* FossilsGlobalView.swift in Sources */,
 				379D015C28215A000087F2A9 /* FishesGlobalView.swift in Sources */,
 				377158C828294B41003F6C73 /* FishDetailsGridView.swift in Sources */,
 				379D015A28215A000087F2A9 /* Villager.swift in Sources */,
+				372800C02836342A00F857FB /* ErrorView.swift in Sources */,
 				377158C42829395C003F6C73 /* DetailsRowView.swift in Sources */,
 				37D9C712282914870079BBFC /* String.swift in Sources */,
 				37B12A06282D3FA2003583F1 /* BugDetailsView.swift in Sources */,
@@ -548,10 +581,13 @@
 				37936507282BEC07005B054A /* BodyFishDetailsView.swift in Sources */,
 				3763B65D2823CDD20026D594 /* Constant.swift in Sources */,
 				379D017C28217B740087F2A9 /* FossilData.swift in Sources */,
+				37D5A4832837929000826064 /* GlobalOwnedRowView.swift in Sources */,
+				37D5A487283796B600826064 /* BugViewModel.swift in Sources */,
 				379D0166282160420087F2A9 /* Name.swift in Sources */,
 				379D017A2821790B0087F2A9 /* BugAvailability.swift in Sources */,
 				37C2FC2A28254ED200D3F282 /* FishDetailsView.swift in Sources */,
 				379D017E28217BE50087F2A9 /* VillagerData.swift in Sources */,
+				37D5A4852837960000826064 /* OwnedBugView.swift in Sources */,
 				379D0178282178820087F2A9 /* BugData.swift in Sources */,
 				37B12A16282D5234003583F1 /* SeaCreatureDetailsView.swift in Sources */,
 				379D016128215E9B0087F2A9 /* FishData.swift in Sources */,

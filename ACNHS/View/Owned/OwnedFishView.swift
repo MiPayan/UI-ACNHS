@@ -1,13 +1,13 @@
 //
-//  FishesGlobalView.swift
+//  OwnedFishView.swift
 //  ACNHS
 //
-//  Created by Mickael PAYAN on 03/05/2022.
+//  Created by Mickael PAYAN on 20/05/2022.
 //
 
 import SwiftUI
 
-struct FishesGlobalView: View {
+struct OwnedFishView: View {
     @StateObject private var fishViewModel: FishViewModel
     
     init(fishViewModel: FishViewModel) {
@@ -17,12 +17,11 @@ struct FishesGlobalView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: gridLayout) {
+                LazyVGrid(columns: ownedGridLayout) {
                     ForEach(fishViewModel.fishes) { fish in
                         NavigationLink(destination: FishDetailsView(fishData: fish)) {
-                            GlobalRowView(
+                            GlobalOwnedRowView(
                                 image: fish.iconURI,
-                                fileName: fish.fileName,
                                 backgroundColor: Color("ColorBlueRoyal")
                             )
                         }
@@ -32,7 +31,7 @@ struct FishesGlobalView: View {
             }
             .background(
                 LinearGradient(
-                    gradient: Gradient(colors: [Color("ColorBlueRoyal"), Color("ColorBlueOcean")]),
+                    gradient: Gradient(colors: [Color("ColorSand"), Color("ColorSandLight")]),
                     startPoint: .bottom,
                     endPoint: .top
                 )
@@ -45,10 +44,8 @@ struct FishesGlobalView: View {
     }
 }
 
-struct FishesGlobalView_Previews: PreviewProvider {
+struct OwnedFishView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            FishesGlobalView(fishViewModel: FishViewModel())
-        }
+        OwnedFishView(fishViewModel: FishViewModel())
     }
 }

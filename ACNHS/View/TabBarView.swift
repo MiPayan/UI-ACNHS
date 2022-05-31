@@ -10,7 +10,7 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
-            FishesGlobalView()
+            FishesGlobalView(fishViewModel: FishViewModel())
                 .tabItem {
                     Image(systemName: "drop")
                     Text("Fish")

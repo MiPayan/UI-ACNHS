@@ -1,28 +1,28 @@
 //
-//  FishViewModel.swift
+//  BugViewModel.swift
 //  ACNHS
 //
-//  Created by Mickael PAYAN on 18/05/2022.
+//  Created by Mickael PAYAN on 20/05/2022.
 //
 
 import SwiftUI
 
-final class FishViewModel: ObservableObject {
+final class BugViewModel: ObservableObject {
     
     private let service: ACNHServiceProtocol
     var failureHandler: (() -> Void) = {}
-    @Published var fishes = [FishData]()
+    @Published var bugs = [BugData]()
 
     init(service: ACNHServiceProtocol = ACNHService(networking: Networking())) {
         self.service = service
     }
     
-    func getFishData() {
-        service.getFishData { result in
+    func getBugData() {
+        service.getBugsData { result in
             switch result {
-            case .success(let fish):
+            case .success(let bug):
                 DispatchQueue.main.async {
-                    self.fishes = fish
+                    self.bugs = bug
                 }
             case .failure(let error):
                 print(error)
