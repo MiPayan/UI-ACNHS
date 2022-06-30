@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct DetailsRowView: View {
-    @State var data: Any
     @State var image: String
     @State var title: String
     @State var value: String
@@ -39,7 +38,6 @@ struct DetailsRowView: View {
 struct DetailsRowView_Previews: PreviewProvider {
     static var previews: some View {
         DetailsRowView(
-            data: fishes[0],
             image: "Bells",
             title: "Price :",
             value: "900",

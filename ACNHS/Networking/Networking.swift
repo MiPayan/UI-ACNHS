@@ -5,33 +5,15 @@
 //  Created by Mickael PAYAN on 03/05/2022.
 //
 
-import Foundation
+import SwiftUI
+import Combine
+import Alamofire
 
-final class Networking {
+final class Networking: NetworkingProtocol {
     
-    func getData<T: Decodable>(with urlString: String, completion: @escaping((Result<[T], NetworkingError>)) -> Void) {
-        guard let url = URL(string: urlString) else {
-            completion(.failure(.decodingFailure))
-            return
+    func getData<T>(with url: URL, completionHandler: @escaping (AFDataResponse<[T]>) -> Void) where T : Decodable {
+        AF.request(url).responseDecodable(of: [T].self) { dataResponse in
+            completionHandler(dataResponse)
         }
-        
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
-            if let error = error as? NetworkingError {
-                completion(.failure(error))
-            }
-            
-            guard let data = data else {
-                completion(.failure(.noData))
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                let decodedData = try decoder.decode([T].self, from: data)
-                completion(.success(decodedData))
-            } catch {
-                completion(.failure(.decodingFailure))
-            }
-        }.resume()
     }
 }

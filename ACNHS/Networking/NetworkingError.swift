@@ -5,7 +5,8 @@
 //  Created by Mickael PAYAN on 03/05/2022.
 //
 
-import Foundation
+import SwiftUI
+import Alamofire
 
 enum NetworkingError: Error {
     case urlInvalid

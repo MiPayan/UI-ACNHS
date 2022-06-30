@@ -8,38 +8,45 @@
 import SwiftUI
 
 struct TabBarView: View {
+    init() {
+        UITabBar.appearance().barTintColor = UIColor(named: "ColorSand")
+        UITabBar.appearance().unselectedItemTintColor = .black
+    }
+    
     var body: some View {
         TabView {
-            FishesGlobalView(fishViewModel: FishViewModel())
+            FishesMainView(fishViewModel: FishViewModel())
                 .tabItem {
-                    Image(systemName: "drop")
+                    Image("Fish")
+                        .imageScale(.large)
                     Text("Fish")
                 }
             
-            SeaCreatureGlobalView()
+            SeaCreatureMainView(seaCreatureViewModel: SeaCreatureViewModel())
                 .tabItem {
-                    Image(systemName: "drop")
+                    Image("SeaCreature")
                     Text("Sea")
                 }
             
-            BugsGlobalView()
+            BugsMainView(bugViewModel: BugViewModel())
                 .tabItem {
-                    Image(systemName: "ladybug")
-                    Text("Bugs")
+                    Image("Butterfly")
+                    Text("Bug")
                 }
             
-            FossilsGlobalView()
+            FossilsMainView()
                 .tabItem {
-                    Image(systemName: "globe.europe.africa")
+                    Image("Fossil")
                     Text("Fossil")
                 }
             
-            Villager()
+            CreatureSelectionMainView()
                 .tabItem {
-                    Image(systemName: "person.2")
-                    Text("Villager")
+                    Image(systemName: "text.book.closed")
+                    Text("Critterpedia")
                 }
         }
+        .accentColor(.white)
     }
 }
 

@@ -5,76 +5,66 @@
 //  Created by Mickael PAYAN on 03/05/2022.
 //
 
-import Foundation
-
-protocol ACNHServiceProtocol {
-    func getFishData(completion: @escaping ((Result<[FishData], NetworkingError>)) -> Void)
-    func getSeaData(completion: @escaping ((Result<[SeaCreatureData], NetworkingError>)) -> Void)
-    func getBugsData(completion: @escaping ((Result<[BugData], NetworkingError>)) -> Void)
-    func getFossilData(completion: @escaping ((Result<[FossilData], NetworkingError>)) -> Void)
-    func getVillagerData(completion: @escaping ((Result<[VillagerData], NetworkingError>)) -> Void)
-}
+import SwiftUI
+import Alamofire
 
 final class ACNHService: ACNHServiceProtocol {
     
-    private let networking: Networking
+    private let session: NetworkingProtocol
     private let endpoint = "https://acnhapi.com/v1a/"
     
-    init(networking: Networking = .init()) {
-        self.networking = networking
+    init(session: NetworkingProtocol = Networking()) {
+        self.session = session
     }
     
-    func getFishData(completion: @escaping ((Result<[FishData], NetworkingError>)) -> Void) {
-        networking.getData(with: "\(endpoint)fish") { (result: Result<[FishData], NetworkingError>) in
-            switch result {
+    func getFishData(completionHandler: @escaping ((Result<[FishData], NetworkingError>)) -> Void) {
+        let urlString = "\(endpoint)fish/"
+        guard let url = URL(string: urlString) else { return }
+        session.getData(with: url) { (response: AFDataResponse<[FishData]>) in
+            switch response.result {
             case .success(let success):
-                completion(.success(success))
-            case .failure(let failure):
-                completion(.failure(failure))
+                completionHandler(.success(success))
+            case .failure(_):
+                completionHandler(.failure(.urlInvalid))
             }
         }
     }
     
-    func getSeaData(completion: @escaping ((Result<[SeaCreatureData], NetworkingError>)) -> Void) {
-        networking.getData(with: "\(endpoint)sea") { (result: Result<[SeaCreatureData], NetworkingError>) in
-            switch result {
+    func getSeaCreatureData(completionHandler: @escaping ((Result<[SeaCreatureData], NetworkingError>)) -> Void) {
+        let urlString = "\(endpoint)sea/"
+        guard let url = URL(string: urlString) else { return }
+        session.getData(with: url) { (response: AFDataResponse<[SeaCreatureData]>) in
+            switch response.result {
             case .success(let success):
-                completion(.success(success))
-            case .failure(let failure):
-                completion(.failure(failure))
+                completionHandler(.success(success))
+            case .failure(_):
+                completionHandler(.failure(.urlInvalid))
             }
         }
     }
     
-    func getBugsData(completion: @escaping ((Result<[BugData], NetworkingError>)) -> Void) {
-        networking.getData(with: "\(endpoint)bugs") { (result: Result<[BugData], NetworkingError>) in
-            switch result {
+    func getBugsData(completionHandler: @escaping ((Result<[BugData], NetworkingError>)) -> Void) {
+        let urlString = "\(endpoint)bugs/"
+        guard let url = URL(string: urlString) else { return }
+        session.getData(with: url) { (response: AFDataResponse<[BugData]>) in
+            switch response.result {
             case .success(let success):
-                completion(.success(success))
-            case .failure(let failure):
-                completion(.failure(failure))
+                completionHandler(.success(success))
+            case .failure(_):
+                completionHandler(.failure(.urlInvalid))
             }
         }
     }
     
-    func getFossilData(completion: @escaping ((Result<[FossilData], NetworkingError>)) -> Void) {
-        networking.getData(with: "\(endpoint)fossils") { (result: Result<[FossilData], NetworkingError>) in
-            switch result {
+    func getFossilData(completionHandler: @escaping ((Result<[FossilData], NetworkingError>)) -> Void) {
+        let urlString = "\(endpoint)fossils/"
+        guard let url = URL(string: urlString) else { return }
+        session.getData(with: url) { (response: AFDataResponse<[FossilData]>) in
+            switch response.result {
             case .success(let success):
-                completion(.success(success))
-            case .failure(let failure):
-                completion(.failure(failure))
-            }
-        }
-    }
-    
-    func getVillagerData(completion: @escaping ((Result<[VillagerData], NetworkingError>)) -> Void) {
-        networking.getData(with: "\(endpoint)villagers") { (result: Result<[VillagerData], NetworkingError>) in
-            switch result {
-            case .success(let success):
-                completion(.success(success))
-            case .failure(let failure):
-                completion(.failure(failure))
+                completionHandler(.success(success))
+            case .failure(_):
+                completionHandler(.failure(.urlInvalid))
             }
         }
     }

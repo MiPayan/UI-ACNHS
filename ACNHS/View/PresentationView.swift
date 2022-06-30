@@ -28,7 +28,7 @@ struct PresentationView: View {
                         TabBarView()
                     } label: {
                         Text("Appuie ici")
-                            .font(.custom("FOT-Rodin Pro UB", size: 26))
+                            .font(.custom("FinkHeavy", size: 26))
                             .foregroundColor(.brown)
                             .opacity(isAnimating ? 1 : 0)
                             .offset(y: isAnimating ? 0 : 40)
@@ -36,8 +36,6 @@ struct PresentationView: View {
                     }
                 }
             }
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
         }
         .onAppear {
             isAnimating = true

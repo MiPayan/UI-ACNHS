@@ -10,6 +10,7 @@ import SwiftUI
 struct GlobalOwnedRowView: View {
     @State var image: String
     @State var backgroundColor: Color
+    
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             Image(uiImage: image.loadImage())
@@ -19,7 +20,7 @@ struct GlobalOwnedRowView: View {
                 .padding()
         }
         .background(backgroundColor)
-        .cornerRadius(12)
+        .cornerRadius(13)
     }
 }
 

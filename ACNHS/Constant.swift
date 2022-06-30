@@ -12,16 +12,4 @@ let seaCreatures: [SeaCreatureData] = Bundle.main.decode("SeaCreatures.json")
 let bugs: [BugData] = Bundle.main.decode("Bugs.json")
 let fossils: [FossilData] = Bundle.main.decode("Fossils.json")
 
-let columnSpacing: CGFloat = 10
-let rowSpacing: CGFloat = 10
-var gridLayout: [GridItem] {
-    return Array(repeating: GridItem(.flexible(), spacing: rowSpacing), count: 2)
-}
 
-var ownedGridLayout: [GridItem] {
-    return Array(repeating: GridItem(.flexible(), spacing: rowSpacing), count: 4)
-}
-
-var monoGridLayout: [GridItem] {
-    return Array(repeating: GridItem(.flexible(), spacing: rowSpacing), count: 1)
-}

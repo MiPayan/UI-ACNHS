@@ -24,12 +24,10 @@ struct HeaderDetailsView: View {
                 .frame(width: 230, height: 230, alignment: .center)
                 .shadow(color: .black, radius: 4, x: -8, y: 8)
                 .offset(y: isAnimating ? 20 : -20)
-                .animation(
-                    Animation
-                        .easeOut(duration: 4)
-                        .repeatForever()
-                    ,
-                    value: isAnimating
+                .animation(Animation
+                    .easeOut(duration: 4)
+                    .repeatForever(),
+                           value: isAnimating
                 )
         }
         .frame(height: 400)

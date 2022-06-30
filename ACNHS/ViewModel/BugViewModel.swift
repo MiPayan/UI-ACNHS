@@ -10,10 +10,9 @@ import SwiftUI
 final class BugViewModel: ObservableObject {
     
     private let service: ACNHServiceProtocol
-    var failureHandler: (() -> Void) = {}
     @Published var bugs = [BugData]()
 
-    init(service: ACNHServiceProtocol = ACNHService(networking: Networking())) {
+    init(service: ACNHServiceProtocol = ACNHService()) {
         self.service = service
     }
     
@@ -28,5 +27,23 @@ final class BugViewModel: ObservableObject {
                 print(error)
             }
         }
+    }
+    
+    func getTheBugFromTheNorthernEmisphere() -> [BugData] {
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let month = calendar.component(.month, from: date)
+        let filtered = bugs.filter { $0.availability.monthArrayNorthern.contains(month) && $0.availability.timeArray.contains(hour) }
+        return filtered
+    }
+    
+    func getTheBugFromTheSouthernEmisphere() -> [BugData] {
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let month = calendar.component(.month, from: date)
+        let filtered = bugs.filter { $0.availability.monthArraySouthern.contains(month) && $0.availability.timeArray.contains(hour) }
+        return filtered
     }
 }

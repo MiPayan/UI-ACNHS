@@ -21,6 +21,7 @@ struct FooterDetailsView: View {
                 .font(.custom("FinkHeavy", size: 18))
                 .padding()
         }
+        .padding([.horizontal, .top])
     }
 }
 
