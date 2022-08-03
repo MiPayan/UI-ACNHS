@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FishDetailsView: View {
+    
     private let fishViewModel = FishViewModel()
     let fishData: FishData
     
@@ -18,13 +19,15 @@ struct FishDetailsView: View {
                     image: fishViewModel.getIconUri(fish: fishData),
                     backgroundColor: Gradient(colors: [Color("ColorBlueOcean"), Color("ColorBlueRoyal")])
                 )
+                
                 BodyFishDetailsView(fishData: fishData)
+                
                 FooterDetailsView(
                     foregroundTitle: Color("ColorBlueOcean"),
-                    museumPhrase: fishData.museumPhrase,
+                    museumPhrase: fishViewModel.getMuseumPhrase(fish: fishData),
                     foregroundMuseumPhrase: Color("ColorBlueRoyal")
                 )
-            }   
+            }
         }
         .edgesIgnoringSafeArea(.top)
         .background(Color("ColorSand"))

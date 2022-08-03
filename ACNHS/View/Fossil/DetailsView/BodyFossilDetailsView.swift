@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct BodyFossilDetailsView: View {
+    
+    private let fossilViewModel = FossilViewModel()
     let fossilData: FossilData
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Text(fossilData.fileName.replacedCharacter("_", by: " ").capitalized)
+            Text(fossilViewModel.getFileName(fossil: fossilData))
                 .foregroundColor(.brown)
                 .font(.custom("FinkHeavy", size: 35))
             

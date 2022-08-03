@@ -13,6 +13,7 @@ struct CreatureSelectionMainView: View {
             ZStack {
                 Color("ColorSandLight")
                     .ignoresSafeArea(.all)
+                
                 VStack(spacing: 8) {
                     HStack(alignment: .top, spacing: 8) {
                         NavigationLink(destination: OwnedFishView(fishViewModel: FishViewModel())) {

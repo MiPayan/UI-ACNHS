@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SeaCreatureMainView: View {
+    
     @StateObject private var seaCreatureViewModel: SeaCreatureViewModel
     @AppStorage("OnBoarding") private var isOnBoarding = true
     

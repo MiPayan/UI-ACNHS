@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct FishDetailsGridView: View {
-    let fishViewModel = FishViewModel()
+    
+    private let fishViewModel = FishViewModel()
     let fishData: FishData
+    
     var body: some View {
-        LazyVGrid(columns: GridSetting().detailsGridLayout) {
+        LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 2)) {
             DetailsRowView(
                 image: "Bells",
                 title: "Price :",

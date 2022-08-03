@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TabBarView: View {
+    
     init() {
         UITabBar.appearance().barTintColor = UIColor(named: "ColorSand")
         UITabBar.appearance().unselectedItemTintColor = .black
@@ -34,7 +35,7 @@ struct TabBarView: View {
                     Text("Bug")
                 }
             
-            FossilsMainView()
+            FossilsMainView(fossilViewModel: FossilViewModel())
                 .tabItem {
                     Image("Fossil")
                     Text("Fossil")

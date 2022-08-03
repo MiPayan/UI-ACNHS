@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct FossilDetailsGridView: View {
+    
+    private let fossilViewModel = FossilViewModel()
     let fossilData: FossilData
+    
     var body: some View {
         DetailsRowView(
             image: "Bells",
             title: "Price :",
-            value: String(fossilData.price),
+            value: fossilViewModel.getPrice(fossil: fossilData),
             subTitleForegroundColor: Color("ColorBrownHeart"),
             valueForegroundColor: .brown
         )

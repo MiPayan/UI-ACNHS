@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct PresentationView: View {
+    
     @State var isAnimating = false
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -16,6 +18,7 @@ struct PresentationView: View {
                     .resizable()
                     .scaledToFill()
                     .ignoresSafeArea()
+                
                 VStack(spacing: 20) {
                     Image("ACNH")
                         .resizable()
@@ -23,7 +26,9 @@ struct PresentationView: View {
                         .opacity(isAnimating ? 1 : 0)
                         .offset(y: isAnimating ? 0 : -40)
                         .animation(.easeOut(duration: 1), value: isAnimating)
+                    
                     Spacer()
+                    
                     NavigationLink {
                         TabBarView()
                     } label: {

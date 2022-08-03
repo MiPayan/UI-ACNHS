@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct BodyBugDetailsView: View {
+    
+    private let bugDataViewModel = BugViewModel()
     let bugData: BugData
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Text(bugData.fileName.replacedCharacter("_", by: " ").capitalized)
+            Text(bugDataViewModel.getFileName(bug: bugData))
                 .foregroundColor(Color("ColorGreenGrass"))
                 .font(.custom("FinkHeavy", size: 35))
             
-            Text("\" \(bugData.catchPhrase) \"")
+            Text(bugDataViewModel.formatCatchPhrase(bug: bugData))
                 .foregroundColor(Color("ColorGreenDark"))
                 .font(.custom("FinkHeavy", size: 18))
                 .padding([.horizontal])

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct AllSeaCreatures: View {
+    
     @StateObject private var seaCreatureViewModel: SeaCreatureViewModel
-    private let gridSetting = GridSetting()
     
     init(seaCreatureViewModel: SeaCreatureViewModel) {
         _seaCreatureViewModel = StateObject(wrappedValue: seaCreatureViewModel)
@@ -22,12 +22,12 @@ struct AllSeaCreatures: View {
                 .foregroundColor(.white)
                 .padding([.top,.horizontal])
             
-            LazyVGrid(columns: gridSetting.gridLayout) {
+            LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 3)) {
                 ForEach(seaCreatureViewModel.seaCreatures) { seaCreature in
                     NavigationLink(destination: SeaCreatureDetailsView(seaCreatureData: seaCreature)) {
                         RowMainView(
-                            image: seaCreature.iconURI,
                             fileName: seaCreature.fileName,
+                            image: seaCreature.iconURI,
                             price: seaCreature.price,
                             backgroundColor: Color("ColorBlueNightLight")
                         )

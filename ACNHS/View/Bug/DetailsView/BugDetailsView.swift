@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct BugDetailsView: View {
+    
+    private let bugViewModel = BugViewModel()
     let bugsData: BugData
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .center) {
                 HeaderDetailsView(
-                    image: bugsData.iconURI,
+                    image: bugViewModel.getIconUri(bug: bugsData),
                     backgroundColor: Gradient(colors: [Color("ColorGreenGrass"), Color("ColorGreenDark")])
                 )
                 
@@ -22,7 +25,7 @@ struct BugDetailsView: View {
                 
                 FooterDetailsView(
                     foregroundTitle: Color("ColorGreenGrass"),
-                    museumPhrase: bugsData.museumPhrase,
+                    museumPhrase: bugViewModel.getMuseumPhrase(bug: bugsData),
                     foregroundMuseumPhrase: Color("ColorGreenDark")
                 )
                 .padding([.horizontal, .top])

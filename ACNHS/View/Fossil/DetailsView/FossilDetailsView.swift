@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct FossilDetailsView: View {
+    
+    private let fossilViewModel = FossilViewModel()
     let fossilData: FossilData
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .center) {
                 HeaderDetailsView(
-                    image: fossilData.imageURI,
+                    image: fossilViewModel.getImageUri(fossil: fossilData),
                     backgroundColor: Gradient(colors: [.brown, Color("ColorBrownHeart")])
                 )
                 
@@ -22,7 +25,7 @@ struct FossilDetailsView: View {
                 
                 FooterDetailsView(
                     foregroundTitle: .brown,
-                    museumPhrase: fossilData.museumPhrase,
+                    museumPhrase: fossilViewModel.getMuseumPhrase(fossil: fossilData),
                     foregroundMuseumPhrase: Color("ColorBrownHeart")
                 )
                 .padding([.horizontal, .top])

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct OwnedFishView: View {
+    
     @StateObject private var fishViewModel: FishViewModel
-    private let gridSetting = GridSetting()
     
     init(fishViewModel: FishViewModel) {
         _fishViewModel = StateObject(wrappedValue: fishViewModel)
@@ -17,7 +17,7 @@ struct OwnedFishView: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: gridSetting.ownedGridLayout) {
+            LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 4)) {
                 ForEach(fishViewModel.fishes) { fish in
                     NavigationLink(destination: FishDetailsView(fishData: fish)) {
                         GlobalOwnedRowView(

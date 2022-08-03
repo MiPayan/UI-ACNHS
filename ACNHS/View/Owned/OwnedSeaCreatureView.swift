@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct OwnedSeaCreatureView: View {
+    
     @StateObject private var seaCreatureViewModel: SeaCreatureViewModel
-    private let gridSetting = GridSetting()
     
     init(seaCreatureViewModel: SeaCreatureViewModel) {
         _seaCreatureViewModel = StateObject(wrappedValue: seaCreatureViewModel)
@@ -17,7 +17,7 @@ struct OwnedSeaCreatureView: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: gridSetting.ownedGridLayout) {
+            LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 4)) {
                 ForEach(seaCreatureViewModel.seaCreatures) { seaCreature in
                     NavigationLink(destination: SeaCreatureDetailsView(seaCreatureData: seaCreature)) {
                         GlobalOwnedRowView(

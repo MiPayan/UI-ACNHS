@@ -8,18 +8,23 @@
 import SwiftUI
 
 struct SeaCreatureDetailsView: View {
+    
+    private let seaCreatureViewModel = SeaCreatureViewModel()
     let seaCreatureData: SeaCreatureData
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .center) {
                 HeaderDetailsView(
-                    image: seaCreatureData.iconURI,
+                    image: seaCreatureViewModel.getIconUri(seaCreature: seaCreatureData),
                     backgroundColor: Gradient(colors: [Color("ColorBlueNightLight"), Color("ColorBlueNight")])
                 )
+                
                 BodySeaCreatureDetailsView(seaCreatureData: seaCreatureData)
+                
                 FooterDetailsView(
                     foregroundTitle: Color("ColorBlueMidnight"),
-                    museumPhrase: seaCreatureData.museumPhrase,
+                    museumPhrase: seaCreatureViewModel.getMuseumPhrase(seaCreature: seaCreatureData),
                     foregroundMuseumPhrase: Color("ColorBlueNight")
                 )
             }

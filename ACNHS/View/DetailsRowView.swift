@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct DetailsRowView: View {
+    
     @State var image: String
     @State var title: String
     @State var value: String
     @State var subTitleForegroundColor: Color
     @State var valueForegroundColor: Color
+    
     var body: some View {
         HStack {
             Image(image)

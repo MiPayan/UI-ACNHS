@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct OwnedBugView: View {
+    
     @StateObject private var bugViewModel: BugViewModel
-    private let gridSetting = GridSetting()
     
     init(bugViewModel: BugViewModel) {
         _bugViewModel = StateObject(wrappedValue: bugViewModel)
@@ -17,13 +17,10 @@ struct OwnedBugView: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: gridSetting.ownedGridLayout) {
+            LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 4)) {
                 ForEach(bugViewModel.bugs) { bug in
                     NavigationLink(destination: BugDetailsView(bugsData: bug)) {
-                        GlobalOwnedRowView(
-                            image: bug.iconURI,
-                            backgroundColor: Color("ColorGreenDark")
-                        )
+                        GlobalOwnedRowView(image: bug.iconURI, backgroundColor: Color("ColorGreenDark"))
                     }
                 }
             }
@@ -31,11 +28,7 @@ struct OwnedBugView: View {
         }
         .background(
             LinearGradient(
-                gradient: Gradient(
-                    colors: [Color("ColorSand"),
-                             Color("ColorSandLight")
-                            ]
-                ),
+                gradient: Gradient(colors: [Color("ColorSand"),Color("ColorSandLight")]),
                 startPoint: .bottom,
                 endPoint: .top
             )

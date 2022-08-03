@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct RowMainView: View {
-    @State var image: String
+    
     @State var fileName: String
+    @State var image: String
     @State var price: Int
     @State var backgroundColor: Color
     @AppStorage("SaveRow") var isTappedTwice = false
@@ -52,10 +53,12 @@ struct RowMainView: View {
 struct GlobalRowView_Previews: PreviewProvider {
     static var previews: some View {
         RowMainView(
-            image: "https://acnhapi.com/v1/icons/fish/1",
             fileName: "Fish name",
+            image: "https://acnhapi.com/v1/icons/fish/1",
             price: 900,
             backgroundColor: Color("ColorBlueRoyal")
         )
+        .frame(width: 120)
+        .previewLayout(.sizeThatFits)
     }
 }

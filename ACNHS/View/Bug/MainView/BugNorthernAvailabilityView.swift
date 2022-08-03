@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct BugNorthernAvailabilityView: View {
+    
     @StateObject private var bugViewModel: BugViewModel
     @AppStorage("OnBoarding") private var isOnBoarding = true
-    private let gridSetting = GridSetting()
     
     init(bugViewModel: BugViewModel) {
         _bugViewModel = StateObject(wrappedValue: bugViewModel)
@@ -28,6 +28,7 @@ struct BugNorthernAvailabilityView: View {
                     .font(.custom("FinkHeavy", size: 18))
                     .foregroundColor(.white)
                     .padding(.horizontal)
+                
                 Button(action: {
                     withAnimation {
                         isOnBoarding = false
@@ -38,12 +39,12 @@ struct BugNorthernAvailabilityView: View {
                 }
             }
             
-            LazyVGrid(columns: gridSetting.gridLayout) {
+            LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 3)) {
                 ForEach(bugViewModel.getTheBugFromTheNorthernEmisphere()) { bug in
                     NavigationLink(destination: BugDetailsView(bugsData: bug)) {
                         RowMainView(
-                            image: bug.iconURI,
                             fileName: bug.fileName,
+                            image: bug.iconURI,
                             price: bug.price,
                             backgroundColor: Color("ColorGreenDark")
                         )

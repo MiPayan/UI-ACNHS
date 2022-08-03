@@ -11,9 +11,13 @@ import RealmSwift
 final class FishViewModel: ObservableObject {
     
     private let service: ACNHServiceProtocol
+    private let date = Date()
+    private let calendar = Calendar.current
     @Published var fishes = [FishData]()
     
-    init(service: ACNHServiceProtocol = ACNHService()) {
+    init(
+        service: ACNHServiceProtocol = ACNHService()
+    ) {
         self.service = service
     }
     
@@ -30,30 +34,12 @@ final class FishViewModel: ObservableObject {
         }
     }
     
-    func getTheFishFromTheNorthernEmisphere() -> [FishData] {
-        let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let month = calendar.component(.month, from: date)
-        let filtered = fishes.filter { $0.availability.monthArrayNorthern.contains(month) && $0.availability.timeArray.contains(hour) }
-        return filtered
-    }
-    
-    func getTheFishFromTheSouthernEmisphere() -> [FishData] {
-        let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let month = calendar.component(.month, from: date)
-        let filtered = fishes.filter { $0.availability.monthArraySouthern.contains(month) && $0.availability.timeArray.contains(hour) }
-        return filtered
-    }
-    
     func getPrice(fish: FishData) -> String {
-        return String(fish.price)
+        String(fish.price)
     }
     
     func getShadow(fish: FishData) -> String {
-        return fish.shadow
+        fish.shadow
     }
     
     func getRarity(fish: FishData) -> String {
@@ -61,47 +47,74 @@ final class FishViewModel: ObservableObject {
     }
     
     func getFileName(fish: FishData) -> String {
-        return fish.fileName.replacedCharacter("_", by: "").capitalized
+        fish.fileName.replacedCharacter("_", by: "").capitalized
     }
     
     func getIconUri(fish: FishData) -> String {
-        return fish.iconURI
+        fish.iconURI
+    }
+    
+    func getMuseumPhrase(fish: FishData) -> String {
+        fish.museumPhrase
     }
     
     func formatCatchPhrase(fish: FishData) -> String {
-        return "\" \(fish.catchPhrase) \""
+        "\" \(fish.catchPhrase) \""
     }
     
     func formatAvailabilityLocation(fish: FishData) -> String {
-        return fish.availability.location.replacedCharacter("when ", by: "")
+        fish.availability.location.replacedCharacter("when ", by: "")
     }
     
     func formatAvailabilityTime(fish: FishData) -> String {
         var time = ""
-        if fish.availability.time == "" {
+        guard fish.availability.time != "" else {
             time = "Always"
-        } else {
+            return time
+        }
+        guard fish.availability.time == "" else {
             time = fish.availability.time
+            return time
         }
         return time
     }
     
+    func getTheFishFromTheNorthernEmisphere() -> [FishData] {
+        let hour = calendar.component(.hour, from: date)
+        let month = calendar.component(.month, from: date)
+        let filtered = fishes.filter { $0.availability.monthArrayNorthern.contains(month) && $0.availability.timeArray.contains(hour) }
+        return filtered
+    }
+    
+    func getTheFishFromTheSouthernEmisphere() -> [FishData] {
+        let hour = calendar.component(.hour, from: date)
+        let month = calendar.component(.month, from: date)
+        let filtered = fishes.filter { $0.availability.monthArraySouthern.contains(month) && $0.availability.timeArray.contains(hour) }
+        return filtered
+    }
+    
     func formatNorthernEmisphere(fish: FishData) -> String {
         var emisphereAvailability = ""
-        if fish.availability.monthNorthern == "" {
+        guard fish.availability.monthNorthern != "" else {
             emisphereAvailability = "Always"
-        } else {
+            return emisphereAvailability
+        }
+        guard fish.availability.monthNorthern == "" else {
             emisphereAvailability = fish.availability.monthNorthern
+            return emisphereAvailability
         }
         return emisphereAvailability
     }
     
     func formatSouthernEmisphere(fish: FishData) -> String {
         var emisphereAvailability = ""
-        if fish.availability.monthSouthern == "" {
+        guard fish.availability.monthSouthern != "" else {
             emisphereAvailability = "Always"
-        } else {
+            return emisphereAvailability
+        }
+        guard fish.availability.monthSouthern == "" else {
             emisphereAvailability = fish.availability.monthSouthern
+            return emisphereAvailability
         }
         return emisphereAvailability
     }

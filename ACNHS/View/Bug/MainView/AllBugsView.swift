@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct AllBugsView: View {
+    
     @StateObject private var bugViewModel: BugViewModel
-    private let gridSetting = GridSetting()
     
     init(bugViewModel: BugViewModel) {
         _bugViewModel = StateObject(wrappedValue: bugViewModel)
@@ -22,12 +22,12 @@ struct AllBugsView: View {
                 .foregroundColor(.white)
                 .padding([.top,.horizontal])
             
-            LazyVGrid(columns: gridSetting.gridLayout) {
+            LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 3)) {
                 ForEach(bugViewModel.bugs) { bug in
                     NavigationLink(destination: BugDetailsView(bugsData: bug)) {
                         RowMainView(
-                            image: bug.iconURI,
                             fileName: bug.fileName,
+                            image: bug.iconURI,
                             price: bug.price,
                             backgroundColor: Color("ColorGreenDark")
                         )

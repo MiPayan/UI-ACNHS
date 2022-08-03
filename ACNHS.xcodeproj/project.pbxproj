@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37071D69289A6CD100A66CDC /* FossilListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37071D68289A6CD000A66CDC /* FossilListView.swift */; };
 		372695AB282E4A8100F2CC3F /* BodySeaCreatureDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372695AA282E4A8100F2CC3F /* BodySeaCreatureDetailsView.swift */; };
 		372695AD282E4B0100F2CC3F /* SeaCreatureDetailsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372695AC282E4B0100F2CC3F /* SeaCreatureDetailsGridView.swift */; };
 		372695B1282E51C700F2CC3F /* FooterDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372695B0282E51C700F2CC3F /* FooterDetailsView.swift */; };
@@ -21,8 +22,6 @@
 		373380C528252CB5005FE900 /* FinkHeavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 373380C428252CB5005FE900 /* FinkHeavy.ttf */; };
 		373ED93F2864971400E50960 /* OwnedFossilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ED93E2864971400E50960 /* OwnedFossilView.swift */; };
 		373ED94128649A8D00E50960 /* OwnedSeaCreatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ED94028649A8D00E50960 /* OwnedSeaCreatureView.swift */; };
-		373ED9452864B26A00E50960 /* BlinkingTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ED9442864B26A00E50960 /* BlinkingTextModifier.swift */; };
-		373ED9472864B29A00E50960 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373ED9462864B29A00E50960 /* View.swift */; };
 		375312572849FC280007452D /* BugNorthernAvailabilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375312562849FC280007452D /* BugNorthernAvailabilityView.swift */; };
 		375312592849FC340007452D /* BugSouthernAvailabilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375312582849FC340007452D /* BugSouthernAvailabilityView.swift */; };
 		3753125B2849FC400007452D /* AllBugsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753125A2849FC400007452D /* AllBugsView.swift */; };
@@ -59,6 +58,7 @@
 		379D0178282178820087F2A9 /* BugData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D0177282178820087F2A9 /* BugData.swift */; };
 		379D017A2821790B0087F2A9 /* BugAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D01792821790B0087F2A9 /* BugAvailability.swift */; };
 		379D017C28217B740087F2A9 /* FossilData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D017B28217B740087F2A9 /* FossilData.swift */; };
+		37AA5207288EE10000FC9BA5 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AA5206288EE10000FC9BA5 /* RoundedCorner.swift */; };
 		37B12A04282D3EF2003583F1 /* Bugs.json in Resources */ = {isa = PBXBuildFile; fileRef = 37B12A03282D3EF2003583F1 /* Bugs.json */; };
 		37B12A06282D3FA2003583F1 /* BugDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B12A05282D3FA2003583F1 /* BugDetailsView.swift */; };
 		37B12A0A282D4D51003583F1 /* Fossils.json in Resources */ = {isa = PBXBuildFile; fileRef = 37B12A09282D4D51003583F1 /* Fossils.json */; };
@@ -96,6 +96,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37071D68289A6CD000A66CDC /* FossilListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FossilListView.swift; sourceTree = "<group>"; };
 		372695AA282E4A8100F2CC3F /* BodySeaCreatureDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySeaCreatureDetailsView.swift; sourceTree = "<group>"; };
 		372695AC282E4B0100F2CC3F /* SeaCreatureDetailsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreatureDetailsGridView.swift; sourceTree = "<group>"; };
 		372695B0282E51C700F2CC3F /* FooterDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterDetailsView.swift; sourceTree = "<group>"; };
@@ -111,8 +112,6 @@
 		373380C628252CEC005FE900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		373ED93E2864971400E50960 /* OwnedFossilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedFossilView.swift; sourceTree = "<group>"; };
 		373ED94028649A8D00E50960 /* OwnedSeaCreatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedSeaCreatureView.swift; sourceTree = "<group>"; };
-		373ED9442864B26A00E50960 /* BlinkingTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkingTextModifier.swift; sourceTree = "<group>"; };
-		373ED9462864B29A00E50960 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		375312562849FC280007452D /* BugNorthernAvailabilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugNorthernAvailabilityView.swift; sourceTree = "<group>"; };
 		375312582849FC340007452D /* BugSouthernAvailabilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugSouthernAvailabilityView.swift; sourceTree = "<group>"; };
 		3753125A2849FC400007452D /* AllBugsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBugsView.swift; sourceTree = "<group>"; };
@@ -150,6 +149,7 @@
 		379D0177282178820087F2A9 /* BugData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugData.swift; sourceTree = "<group>"; };
 		379D01792821790B0087F2A9 /* BugAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugAvailability.swift; sourceTree = "<group>"; };
 		379D017B28217B740087F2A9 /* FossilData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FossilData.swift; sourceTree = "<group>"; };
+		37AA5206288EE10000FC9BA5 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		37B12A03282D3EF2003583F1 /* Bugs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Bugs.json; sourceTree = "<group>"; };
 		37B12A05282D3FA2003583F1 /* BugDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugDetailsView.swift; sourceTree = "<group>"; };
 		37B12A09282D4D51003583F1 /* Fossils.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fossils.json; sourceTree = "<group>"; };
@@ -195,10 +195,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37071D6A289AA86500A66CDC /* ModelData */ = {
+			isa = PBXGroup;
+			children = (
+				376B88BE2822A9190080EF5A /* Fishes.json */,
+				37B12A10282D4EA9003583F1 /* SeaCreatures.json */,
+				37B12A03282D3EF2003583F1 /* Bugs.json */,
+				37B12A09282D4D51003583F1 /* Fossils.json */,
+			);
+			path = ModelData;
+			sourceTree = "<group>";
+		};
 		373380C228252C8D005FE900 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				3763B65C2823CDD20026D594 /* Constant.swift */,
 				377581CD2860A03E00B55329 /* GridSetting.swift */,
+				37AA5206288EE10000FC9BA5 /* RoundedCorner.swift */,
 				379D012A282159EA0087F2A9 /* Assets.xcassets */,
 				373380C428252CB5005FE900 /* FinkHeavy.ttf */,
 			);
@@ -251,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				379D015228215A000087F2A9 /* FossilsMainView.swift */,
+				37071D68289A6CD000A66CDC /* FossilListView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -270,7 +284,6 @@
 			children = (
 				3763B65F2823CE7C0026D594 /* CodableBundleExtension.swift */,
 				37D9C711282914870079BBFC /* String.swift */,
-				373ED9462864B29A00E50960 /* View.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -327,14 +340,11 @@
 			isa = PBXGroup;
 			children = (
 				373380C628252CEC005FE900 /* Info.plist */,
-				3763B65C2823CDD20026D594 /* Constant.swift */,
-				379D0126282159E90087F2A9 /* ACNHSApp.swift */,
 				373380C228252C8D005FE900 /* Utility */,
 				3763B65E2823CE510026D594 /* Extension */,
 				379D0167282164F70087F2A9 /* Networking */,
 				37FD00AF2834D85A003F6353 /* ViewModel */,
 				379D015F28215E820087F2A9 /* Model */,
-				379D0165282160420087F2A9 /* Name.swift */,
 				379D015E28215BB90087F2A9 /* View */,
 				379D012C282159EA0087F2A9 /* Preview Content */,
 			);
@@ -344,6 +354,7 @@
 		379D012C282159EA0087F2A9 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				37071D6A289AA86500A66CDC /* ModelData */,
 				379D012D282159EA0087F2A9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -352,8 +363,8 @@
 		379D0136282159EB0087F2A9 /* ACNHSTests */ = {
 			isa = PBXGroup;
 			children = (
+				37AA5203288ED91700FC9BA5 /* ViewModel */,
 				379D0137282159EB0087F2A9 /* ACNHSTests.swift */,
-				3779FC922858CA8F00D87091 /* TestFishViewModel.swift */,
 				3779FC942858CC1400D87091 /* ACNHJsonMappingTests.swift */,
 			);
 			path = ACNHSTests;
@@ -362,6 +373,7 @@
 		379D015E28215BB90087F2A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				379D0126282159E90087F2A9 /* ACNHSApp.swift */,
 				379D015128215A000087F2A9 /* PresentationView.swift */,
 				379D015628215A000087F2A9 /* TabBarView.swift */,
 				37662A7A282D0F2100217ED5 /* RowMainView.swift */,
@@ -374,7 +386,6 @@
 				37B12A0B282D4D98003583F1 /* Fossil */,
 				37D5A4812837911D00826064 /* Owned */,
 				372800BF2836342A00F857FB /* ErrorView.swift */,
-				373ED9442864B26A00E50960 /* BlinkingTextModifier.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -386,6 +397,7 @@
 				379D0171282172960087F2A9 /* SeaCreatureData */,
 				379D01702821728C0087F2A9 /* BugData */,
 				379D016F2821727C0087F2A9 /* Fossil */,
+				379D0165282160420087F2A9 /* Name.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -407,7 +419,6 @@
 			children = (
 				379D016028215E9B0087F2A9 /* FishData.swift */,
 				379D01632821600B0087F2A9 /* FishAvailability.swift */,
-				376B88BE2822A9190080EF5A /* Fishes.json */,
 			);
 			path = FishData;
 			sourceTree = "<group>";
@@ -416,7 +427,6 @@
 			isa = PBXGroup;
 			children = (
 				379D017B28217B740087F2A9 /* FossilData.swift */,
-				37B12A09282D4D51003583F1 /* Fossils.json */,
 			);
 			path = Fossil;
 			sourceTree = "<group>";
@@ -426,7 +436,6 @@
 			children = (
 				379D0177282178820087F2A9 /* BugData.swift */,
 				379D01792821790B0087F2A9 /* BugAvailability.swift */,
-				37B12A03282D3EF2003583F1 /* Bugs.json */,
 			);
 			path = BugData;
 			sourceTree = "<group>";
@@ -436,9 +445,16 @@
 			children = (
 				379D0173282175FC0087F2A9 /* SeaCreatureData.swift */,
 				379D0175282177440087F2A9 /* SeaAvailability.swift */,
-				37B12A10282D4EA9003583F1 /* SeaCreatures.json */,
 			);
 			path = SeaCreatureData;
+			sourceTree = "<group>";
+		};
+		37AA5203288ED91700FC9BA5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3779FC922858CA8F00D87091 /* TestFishViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		37B12A0B282D4D98003583F1 /* Fossil */ = {
@@ -486,8 +502,8 @@
 			isa = PBXGroup;
 			children = (
 				37FD00B02834D872003F6353 /* FishViewModel.swift */,
-				37D5A486283796B600826064 /* BugViewModel.swift */,
 				37DD5FCC284F7FA400AC02F7 /* SeaCreatureViewModel.swift */,
+				37D5A486283796B600826064 /* BugViewModel.swift */,
 				37D7BB272846009D00512C95 /* FossilViewModel.swift */,
 			);
 			path = ViewModel;
@@ -612,14 +628,12 @@
 				379D015B28215A000087F2A9 /* SeaCreatureMainView.swift in Sources */,
 				37DD5FCF284F8B1100AC02F7 /* SeaCreatureNorthernAvailabilityView.swift in Sources */,
 				373ED93F2864971400E50960 /* OwnedFossilView.swift in Sources */,
-				373ED9472864B29A00E50960 /* View.swift in Sources */,
 				37662A7B282D0F2100217ED5 /* RowMainView.swift in Sources */,
 				372695B7282E5D5A00F2CC3F /* BodyFossilDetailsView.swift in Sources */,
 				379D016D2821684D0087F2A9 /* ACNHService.swift in Sources */,
 				372695B3282E54FC00F2CC3F /* BugDetailsGridView.swift in Sources */,
 				373ED94128649A8D00E50960 /* OwnedSeaCreatureView.swift in Sources */,
 				37B12A13282D5000003583F1 /* FossilDetailsView.swift in Sources */,
-				373ED9452864B26A00E50960 /* BlinkingTextModifier.swift in Sources */,
 				372E5A7D2848B39A005F511B /* FishNorthernAvailabilityView.swift in Sources */,
 				379D015D28215A000087F2A9 /* TabBarView.swift in Sources */,
 				379D016B2821659E0087F2A9 /* NetworkingError.swift in Sources */,
@@ -631,6 +645,7 @@
 				37FD00B12834D872003F6353 /* FishViewModel.swift in Sources */,
 				372695AB282E4A8100F2CC3F /* BodySeaCreatureDetailsView.swift in Sources */,
 				372695B9282E5D6800F2CC3F /* FossilDetailsGridView.swift in Sources */,
+				37071D69289A6CD100A66CDC /* FossilListView.swift in Sources */,
 				379D0174282175FC0087F2A9 /* SeaCreatureData.swift in Sources */,
 				379D0127282159E90087F2A9 /* ACNHSApp.swift in Sources */,
 				372695AD282E4B0100F2CC3F /* SeaCreatureDetailsGridView.swift in Sources */,
@@ -657,6 +672,7 @@
 				37936507282BEC07005B054A /* BodyFishDetailsView.swift in Sources */,
 				3763B65D2823CDD20026D594 /* Constant.swift in Sources */,
 				379D017C28217B740087F2A9 /* FossilData.swift in Sources */,
+				37AA5207288EE10000FC9BA5 /* RoundedCorner.swift in Sources */,
 				37DD5FD1284F8B1F00AC02F7 /* SeaCreatureSouthernAvailabilityView.swift in Sources */,
 				37D5A4832837929000826064 /* GlobalOwnedRowView.swift in Sources */,
 				37D5A487283796B600826064 /* BugViewModel.swift in Sources */,

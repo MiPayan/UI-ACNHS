@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct FooterDetailsView: View {
+    
     @State var foregroundTitle: Color
     @State var museumPhrase: String
     @State var foregroundMuseumPhrase: Color
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Museum phrase :")
                 .foregroundColor(foregroundTitle)
                 .font(.custom("FinkHeavy", size: 35))
+            
             Text(museumPhrase)
                 .foregroundColor(foregroundMuseumPhrase)
                 .font(.custom("FinkHeavy", size: 18))

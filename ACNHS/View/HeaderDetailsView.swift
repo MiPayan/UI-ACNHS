@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct HeaderDetailsView: View {
+    
     @State var image: String
     @State var backgroundColor: Gradient
     @State var isAnimating = false
+    
     var body: some View {
         ZStack {
             LinearGradient(

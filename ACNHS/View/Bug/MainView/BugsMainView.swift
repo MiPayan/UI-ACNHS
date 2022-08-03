@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BugsMainView: View {
+    
     @StateObject private var bugViewModel: BugViewModel
     @AppStorage("OnBoarding") private var isOnBoarding = true
     

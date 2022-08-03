@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct OwnedFossilView: View {
+    
     @StateObject private var fossilModelView: FossilViewModel
-    private let gridSetting = GridSetting()
     
     init(fossilModelView: FossilViewModel) {
         _fossilModelView = StateObject(wrappedValue: fossilModelView)
@@ -17,13 +17,10 @@ struct OwnedFossilView: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: gridSetting.ownedGridLayout) {
+            LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 4)) {
                 ForEach(fossilModelView.fossils) { fossil in
                     NavigationLink(destination: FossilDetailsView(fossilData: fossil)) {
-                        GlobalOwnedRowView(
-                            image: fossil.imageURI,
-                            backgroundColor: Color("ColorBrownHeart")
-                        )
+                        GlobalOwnedRowView(image: fossil.imageURI, backgroundColor: Color("ColorBrownHeart"))
                     }
                 }
             }

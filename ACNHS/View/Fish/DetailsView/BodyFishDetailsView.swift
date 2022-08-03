@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct BodyFishDetailsView: View {
-    let fishData: FishData
+    
     private let fishViewModel = FishViewModel()
+    let fishData: FishData
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             Text(fishViewModel.getFileName(fish: fishData))
                 .foregroundColor(Color("ColorBlueOcean"))
                 .font(.custom("FinkHeavy", size: 35))
+            
             Text(fishViewModel.formatCatchPhrase(fish: fishData))
                 .foregroundColor(Color("ColorBlueRoyal"))
                 .font(.custom("FinkHeavy", size: 18))
                 .padding(.horizontal)
+            
             FishDetailsGridView(fishData: fishData)
         }
         .padding()

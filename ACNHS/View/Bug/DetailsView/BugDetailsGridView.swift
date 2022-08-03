@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct BugDetailsGridView: View {
+    
+    let bugViewModel = BugViewModel()
     let bug: BugData
-    private let gridSetting = GridSetting()
     var body: some View {
-        LazyVGrid(columns: gridSetting.detailsGridLayout) {
+        LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 2)) {
             DetailsRowView(
                 image: "Bells",
                 title: "Price :",
-                value: String(bug.price),
+                value: bugViewModel.getPrice(bug: bug),
                 subTitleForegroundColor: Color("ColorGreenDark"),
                 valueForegroundColor: Color("ColorGreenGrass")
             )
@@ -23,7 +24,7 @@ struct BugDetailsGridView: View {
             DetailsRowView(
                 image: "Grass",
                 title: "Location :",
-                value: bug.availability.location,
+                value: bugViewModel.getAvailabilityLocation(bug: bug),
                 subTitleForegroundColor: Color("ColorGreenDark"),
                 valueForegroundColor: Color("ColorGreenGrass")
             )
@@ -31,7 +32,7 @@ struct BugDetailsGridView: View {
             DetailsRowView(
                 image: "Timer",
                 title: "Time :",
-                value: bug.availability.time.replacedCharacter("", by: "-"),
+                value: bugViewModel.formatAvailabilityTime(bug: bug),
                 subTitleForegroundColor: Color("ColorGreenDark"),
                 valueForegroundColor: Color("ColorGreenGrass")
             )
@@ -39,7 +40,7 @@ struct BugDetailsGridView: View {
             DetailsRowView(
                 image: "Rarity",
                 title: "Rarity :",
-                value: bug.availability.rarity,
+                value: bugViewModel.getRarity(bug: bug),
                 subTitleForegroundColor: Color("ColorGreenDark"),
                 valueForegroundColor: Color("ColorGreenGrass")
             )
@@ -47,7 +48,7 @@ struct BugDetailsGridView: View {
             DetailsRowView(
                 image: "North",
                 title: "Northern hemisphere :",
-                value: bug.availability.monthNorthern.replacedCharacter("-", by: " - "),
+                value: bugViewModel.formatNorthernEmisphere(bug: bug),
                 subTitleForegroundColor: Color("ColorGreenDark"),
                 valueForegroundColor: Color("ColorGreenGrass")
             )
@@ -55,7 +56,7 @@ struct BugDetailsGridView: View {
             DetailsRowView(
                 image: "South",
                 title: "Southern hemisphere :",
-                value: bug.availability.monthSouthern.replacedCharacter("-", by: " - "),
+                value: bugViewModel.formatSouthernEmisphere(bug: bug),
                 subTitleForegroundColor: Color("ColorGreenDark"),
                 valueForegroundColor: Color("ColorGreenGrass")
             )

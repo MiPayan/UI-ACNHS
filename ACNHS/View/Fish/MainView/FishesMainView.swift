@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FishesMainView: View {
+    
     @StateObject private var fishViewModel: FishViewModel
     @AppStorage("OnBoarding") private var isOnBoarding = true
     
@@ -33,6 +34,7 @@ struct FishesMainView: View {
                 )
             )
             .navigationBarHidden(true)
+            
         }
         .onAppear {
             fishViewModel.getFishData()

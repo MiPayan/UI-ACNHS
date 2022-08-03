@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct SeaCreatureDetailsGridView: View {
+    
+    private let seaCreatureViewModel = SeaCreatureViewModel()
     let seaCreatureData: SeaCreatureData
-    private let gridSetting = GridSetting()
+    
     var body: some View {
-        LazyVGrid(columns: gridSetting.detailsGridLayout) {
+        LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 2)) {
             DetailsRowView(
                 image: "Bells",
                 title: "Price :",
-                value: String(seaCreatureData.price),
+                value: seaCreatureViewModel.getPrice(seaCreature: seaCreatureData),
                 subTitleForegroundColor: Color("ColorBlueNight"),
                 valueForegroundColor: Color("ColorBlueMidnight")
             )
@@ -23,7 +25,7 @@ struct SeaCreatureDetailsGridView: View {
             DetailsRowView(
                 image: "SeaCreatureShadow",
                 title: "Shadow:",
-                value: seaCreatureData.shadow,
+                value: seaCreatureViewModel.getShadow(seaCreature: seaCreatureData),
                 subTitleForegroundColor: Color("ColorBlueNight"),
                 valueForegroundColor: Color("ColorBlueMidnight")
             )
@@ -31,7 +33,7 @@ struct SeaCreatureDetailsGridView: View {
             DetailsRowView(
                 image: "Timer",
                 title: "Time :",
-                value: seaCreatureData.availability.time.replacedCharacter("", by: "-"),
+                value: seaCreatureViewModel.formatAvailabilityTime(seaCreature: seaCreatureData),
                 subTitleForegroundColor: Color("ColorBlueNight"),
                 valueForegroundColor: Color("ColorBlueMidnight")
             )
@@ -39,7 +41,7 @@ struct SeaCreatureDetailsGridView: View {
             DetailsRowView(
                 image: "Speedmeter",
                 title: "Speed :",
-                value: seaCreatureData.speed,
+                value: seaCreatureViewModel.getSpeed(seaCreature: seaCreatureData),
                 subTitleForegroundColor: Color("ColorBlueNight"),
                 valueForegroundColor: Color("ColorBlueMidnight")
             )
@@ -47,7 +49,7 @@ struct SeaCreatureDetailsGridView: View {
             DetailsRowView(
                 image: "North",
                 title: "Northern hemisphere :",
-                value: seaCreatureData.availability.monthNorthern.replacedCharacter("-", by: " - "),
+                value: seaCreatureViewModel.formatNorthernEmisphere(seaCreature: seaCreatureData),
                 subTitleForegroundColor: Color("ColorBlueNight"),
                 valueForegroundColor: Color("ColorBlueMidnight")
             )
@@ -55,7 +57,7 @@ struct SeaCreatureDetailsGridView: View {
             DetailsRowView(
                 image: "South",
                 title: "Southern hemisphere :",
-                value: seaCreatureData.availability.monthSouthern.replacedCharacter("-", by: " - "),
+                value: seaCreatureViewModel.formatSouthernEmisphere(seaCreature: seaCreatureData),
                 subTitleForegroundColor: Color("ColorBlueNight"),
                 valueForegroundColor: Color("ColorBlueMidnight")
             )

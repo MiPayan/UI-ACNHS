@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct FishSouthernAvailabilityView: View {
+    
     @StateObject private var fishViewModel: FishViewModel
     @AppStorage("OnBoarding") private var isOnBoarding = false
-    private let gridSetting = GridSetting()
     
     init(fishViewModel: FishViewModel) {
         _fishViewModel = StateObject(wrappedValue: fishViewModel)
@@ -22,11 +22,13 @@ struct FishSouthernAvailabilityView: View {
                 .font(.custom("FinkHeavy", size: 26))
                 .foregroundColor(.white)
                 .padding([.top,.horizontal])
+            
             HStack(spacing: 0) {
                 Text("(Southern emisphere)")
                     .font(.custom("FinkHeavy", size: 18))
                     .foregroundColor(.white)
                     .padding(.horizontal)
+                
                 Button(action: {
                     withAnimation {
                         isOnBoarding = true
@@ -37,12 +39,12 @@ struct FishSouthernAvailabilityView: View {
                 }
             }
             
-            LazyVGrid(columns: gridSetting.gridLayout) {
+            LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 3)) {
                 ForEach(fishViewModel.getTheFishFromTheSouthernEmisphere()) { fish in
                     NavigationLink(destination: FishDetailsView(fishData: fish)) {
                         RowMainView(
-                            image: fish.iconURI,
                             fileName: fish.fileName,
+                            image: fish.iconURI,
                             price: fish.price,
                             backgroundColor: Color("ColorBlueRoyal")
                         )

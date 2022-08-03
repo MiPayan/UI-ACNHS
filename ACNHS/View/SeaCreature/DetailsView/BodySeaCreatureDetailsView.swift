@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct BodySeaCreatureDetailsView: View {
+    
+    private let seaCreatureViewModel = SeaCreatureViewModel()
     let seaCreatureData: SeaCreatureData
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Text(seaCreatureData.fileName.replacedCharacter("_", by: " ").capitalized)
+            Text(seaCreatureViewModel.getFileName(seaCreature: seaCreatureData))
                 .foregroundColor(Color("ColorBlueMidnight"))
                 .font(.custom("FinkHeavy", size: 35))
-            Text("\" \(seaCreatureData.catchPhrase) \"")
+            
+            Text(seaCreatureViewModel.formatCatchPhrase(seaCreature: seaCreatureData))
                 .foregroundColor(Color("ColorBlueNight"))
                 .font(.custom("FinkHeavy", size: 18))
                 .padding([.horizontal])
+            
             SeaCreatureDetailsGridView(seaCreatureData: seaCreatureData)
         }
         .padding()

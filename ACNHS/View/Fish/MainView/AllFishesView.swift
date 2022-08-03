@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct AllFishesView: View {
+    
     @StateObject private var fishViewModel: FishViewModel
-    private let gridSetting = GridSetting()
     
     init(fishViewModel: FishViewModel) {
         _fishViewModel = StateObject(wrappedValue: fishViewModel)
@@ -22,12 +22,12 @@ struct AllFishesView: View {
                 .foregroundColor(.white)
                 .padding([.top,.horizontal])
             
-            LazyVGrid(columns: gridSetting.gridLayout) {
+            LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 3)) {
                 ForEach(fishViewModel.fishes) { fish in
                     NavigationLink(destination: FishDetailsView(fishData: fish)) {
                         RowMainView(
-                            image: fish.iconURI,
                             fileName: fish.fileName,
+                            image: fish.iconURI,
                             price: fish.price,
                             backgroundColor: Color("ColorBlueRoyal")
                         )

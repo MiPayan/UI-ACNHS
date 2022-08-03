@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GlobalOwnedRowView: View {
+    
     @State var image: String
     @State var backgroundColor: Color
     

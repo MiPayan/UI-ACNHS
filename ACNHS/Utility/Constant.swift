@@ -11,5 +11,3 @@ let fishes: [FishData] = Bundle.main.decode("Fishes.json")
 let seaCreatures: [SeaCreatureData] = Bundle.main.decode("SeaCreatures.json")
 let bugs: [BugData] = Bundle.main.decode("Bugs.json")
 let fossils: [FossilData] = Bundle.main.decode("Fossils.json")
-
-

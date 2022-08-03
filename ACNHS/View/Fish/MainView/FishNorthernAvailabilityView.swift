@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct FishNorthernAvailabilityView: View {
+    
     @StateObject private var fishViewModel: FishViewModel
     @AppStorage("OnBoarding") private var isOnBoarding = true
-    private let gridSetting = GridSetting()
     
     init(fishViewModel: FishViewModel) {
         _fishViewModel = StateObject(wrappedValue: fishViewModel)
@@ -38,12 +38,12 @@ struct FishNorthernAvailabilityView: View {
                 }
             }
             
-            LazyVGrid(columns: gridSetting.gridLayout) {
+            LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 3)) {
                 ForEach(fishViewModel.getTheFishFromTheNorthernEmisphere()) { fish in
                     NavigationLink(destination: FishDetailsView(fishData: fish)) {
                         RowMainView(
-                            image: fish.iconURI,
                             fileName: fish.fileName,
+                            image: fish.iconURI,
                             price: fish.price,
                             backgroundColor: Color("ColorBlueRoyal")
                         )

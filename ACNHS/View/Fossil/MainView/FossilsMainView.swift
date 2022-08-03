@@ -8,16 +8,22 @@
 import SwiftUI
 
 struct FossilsMainView: View {
-    private let gridSetting = GridSetting()
+    
+    @StateObject private var fossilViewModel: FossilViewModel
+    
+    init(fossilViewModel: FossilViewModel) {
+        _fossilViewModel = StateObject(wrappedValue: fossilViewModel)
+    }
+    
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: gridSetting.gridLayout) {
-                    ForEach(fossils) { fossil in
+                LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 3)) {
+                    ForEach(fossilViewModel.fossils) { fossil in
                         NavigationLink(destination: FossilDetailsView(fossilData: fossil)) {
                             RowMainView(
-                                image: fossil.imageURI,
                                 fileName: fossil.fileName,
+                                image: fossil.imageURI,
                                 price: fossil.price,
                                 backgroundColor: Color("ColorBrownHeart")
                             )
@@ -35,11 +41,14 @@ struct FossilsMainView: View {
             )
             .navigationBarHidden(true)
         }
+        .onAppear {
+            fossilViewModel.getFossilData()
+        }
     }
 }
 
 struct FossilsGlobalView_Previews: PreviewProvider {
     static var previews: some View {
-        FossilsMainView()
+        FossilsMainView(fossilViewModel: FossilViewModel())
     }
 }

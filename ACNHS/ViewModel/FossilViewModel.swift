@@ -30,15 +30,20 @@ final class FossilViewModel: ObservableObject {
             }
         }
     }
-    
-    func sortTheFossilsOfTheSamePart() {
-
+        
+    func getImageUri(fossil: FossilData) -> String {
+        fossil.imageURI
     }
     
-//    let date = Date()
-//    let calendar = Calendar.current
-//    let hour = calendar.component(.hour, from: date)
-//    let month = calendar.component(.month, from: date)
-//    let filtered = fishes.filter { $0.availability.monthArraySouthern.contains(month) && $0.availability.timeArray.contains(hour) }
-//    return filtered
+    func getMuseumPhrase(fossil: FossilData) -> String {
+        fossil.museumPhrase
+    }
+    
+    func getFileName(fossil: FossilData) -> String {
+        fossil.fileName.replacedCharacter("_", by: "").capitalized
+    }
+    
+    func getPrice(fossil: FossilData) -> String {
+        String(fossil.price)
+    }
 }

@@ -9,25 +9,26 @@ import UIKit
 
 extension Bundle {
     func decode<T: Codable>(_ file: String) -> T {
-        //  I. Locate JSON File
+        
+        //  Locate JSON File
         guard let url = self.url(forResource: file, withExtension: nil) else {
             fatalError("Failed to locate \(file) in bundle.")
         }
         
-        //  II.  Create a property for the data.
+        //  Create a property for the data.
         guard let data = try? Data(contentsOf: url) else {
             fatalError("Failed to load \(file) from bundle.")
         }
         
-        //  III. Create a decoder.
+        //  Create a decoder.
         let decoder = JSONDecoder()
         
-        //  IV. Create a property for the decoded data.
+        //  Create a property for the decoded data.
         guard let decodedData = try? decoder.decode(T.self, from: data) else {
             fatalError("Failed to decode \(file) from bundle ")
         }
         
-        //  V. Return the ready-to-use data.
+        //  Return the ready-to-use data.
         return decodedData
     }
 }
