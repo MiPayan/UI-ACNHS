@@ -5,7 +5,7 @@
 //  Created by Mickael PAYAN on 16/06/2022.
 //
 
-import SwiftUI
+import Foundation
 
 protocol ACNHServiceProtocol {
     func getFishData(completionHandler: @escaping ((Result<[FishData], NetworkingError>)) -> Void)

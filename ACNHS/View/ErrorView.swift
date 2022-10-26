@@ -19,6 +19,7 @@ struct ErrorView: View {
                 .resizable()
                 .scaledToFit()
                 .background(Color("ColorYellow"))
+                
             
             Text(errorText)
                 .font(.custom("FinkHeavy", size: 20))
@@ -26,7 +27,7 @@ struct ErrorView: View {
                 .multilineTextAlignment(.center)
             
             Button(action: {
-                //                TODO: - Doit réaliser l'action.
+                // TODO: - Doit réaliser l'action.
             }) {
                 
                 ZStack {

@@ -1,0 +1,36 @@
+/*
+ Localizable.strings
+ ACNHS
+ 
+ Created by Mickael PAYAN on 12/10/2022.
+ 
+ */
+
+
+"currently_available" = "Currently available";
+"northern_hemisphere_parenthese" = "(Northern hemisphere)";
+"southern_hemisphere_parenthese" = "(Southern hemisphere)";
+"none_error" = "None.";
+
+// MARK: - Fishes
+
+"all_fishes" = "All fishes";
+
+// MARK: - SeaCreatures
+
+"all_sea_creatures" = "All sea creatures";
+
+// MARK: - Bugs
+
+"all_bugs" = "All bugs";
+
+// MARK: - DetailsGridView
+
+"price" = "Price";
+"location" = "Location";
+"shadow" = "Shadow";
+"time" = "Time";
+"rarity" = "Rarity";
+"northern_hemisphere" = "Northern hemisphere";
+"southern_hemisphere" = "Southern hemisphere";
+"speed" = "Speed";

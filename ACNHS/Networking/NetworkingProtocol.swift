@@ -5,9 +5,12 @@
 //  Created by Mickael PAYAN on 16/06/2022.
 //
 
-import SwiftUI
-import Alamofire
+import Foundation
 
 protocol NetworkingProtocol {
-    func getData<T: Codable>(with url: URL, completionHandler: @escaping (AFDataResponse<[T]>) -> Void)
+    
+    func fetchData<T: Decodable>(
+        with urlString: String,
+        completion handler: @escaping ((Result<[T], NetworkingError>) -> Void)
+    )
 }

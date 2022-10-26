@@ -16,34 +16,38 @@ struct TabBarView: View {
     
     var body: some View {
         TabView {
-            FishesMainView(fishViewModel: FishViewModel())
+            FishesMainView(fishesViewModel: FishViewModel())
                 .tabItem {
                     Image("Fish")
                         .imageScale(.large)
                     Text("Fish")
                 }
             
-            SeaCreatureMainView(seaCreatureViewModel: SeaCreatureViewModel())
+            SeaCreaturesMainView(seaCreaturesViewModel: SeaCreatureViewModel())
                 .tabItem {
                     Image("SeaCreature")
+                        .imageScale(.small)
                     Text("Sea")
                 }
             
             BugsMainView(bugViewModel: BugViewModel())
                 .tabItem {
                     Image("Butterfly")
+                        .imageScale(.small)
                     Text("Bug")
                 }
             
             FossilsMainView(fossilViewModel: FossilViewModel())
                 .tabItem {
                     Image("Fossil")
+                        .imageScale(.small)
                     Text("Fossil")
                 }
             
             CreatureSelectionMainView()
                 .tabItem {
                     Image(systemName: "text.book.closed")
+                        .imageScale(.small)
                     Text("Critterpedia")
                 }
         }

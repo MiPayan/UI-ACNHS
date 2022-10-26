@@ -5,8 +5,7 @@
 //  Created by Mickael PAYAN on 03/05/2022.
 //
 
-import SwiftUI
-import Alamofire
+import Foundation
 
 final class ACNHService: ACNHServiceProtocol {
     
@@ -18,10 +17,9 @@ final class ACNHService: ACNHServiceProtocol {
     }
     
     func getFishData(completionHandler: @escaping ((Result<[FishData], NetworkingError>)) -> Void) {
-        let urlString = "\(endpoint)fish/"
-        guard let url = URL(string: urlString) else { return }
-        session.getData(with: url) { (response: AFDataResponse<[FishData]>) in
-            switch response.result {
+        let urlString = "\(endpoint)fish"
+        session.fetchData(with: urlString) { (result: Result<[FishData], NetworkingError>) in
+            switch result {
             case .success(let success):
                 completionHandler(.success(success))
             case .failure(_):
@@ -32,9 +30,8 @@ final class ACNHService: ACNHServiceProtocol {
     
     func getSeaCreatureData(completionHandler: @escaping ((Result<[SeaCreatureData], NetworkingError>)) -> Void) {
         let urlString = "\(endpoint)sea/"
-        guard let url = URL(string: urlString) else { return }
-        session.getData(with: url) { (response: AFDataResponse<[SeaCreatureData]>) in
-            switch response.result {
+        session.fetchData(with: urlString) { (result: Result<[SeaCreatureData], NetworkingError>) in
+            switch result {
             case .success(let success):
                 completionHandler(.success(success))
             case .failure(_):
@@ -45,9 +42,8 @@ final class ACNHService: ACNHServiceProtocol {
     
     func getBugsData(completionHandler: @escaping ((Result<[BugData], NetworkingError>)) -> Void) {
         let urlString = "\(endpoint)bugs/"
-        guard let url = URL(string: urlString) else { return }
-        session.getData(with: url) { (response: AFDataResponse<[BugData]>) in
-            switch response.result {
+        session.fetchData(with: urlString) { (result: Result<[BugData], NetworkingError>) in
+            switch result {
             case .success(let success):
                 completionHandler(.success(success))
             case .failure(_):
@@ -58,9 +54,8 @@ final class ACNHService: ACNHServiceProtocol {
     
     func getFossilData(completionHandler: @escaping ((Result<[FossilData], NetworkingError>)) -> Void) {
         let urlString = "\(endpoint)fossils/"
-        guard let url = URL(string: urlString) else { return }
-        session.getData(with: url) { (response: AFDataResponse<[FossilData]>) in
-            switch response.result {
+        session.fetchData(with: urlString) { (result: Result<[FossilData], NetworkingError>) in
+            switch result {
             case .success(let success):
                 completionHandler(.success(success))
             case .failure(_):

@@ -14,11 +14,13 @@ struct GlobalOwnedRowView: View {
     
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
-            Image(uiImage: image.loadImage())
-                .resizable()
-                .scaledToFit()
-                .shadow(color: .black, radius: 4, x: -8, y: 8)
-                .padding()
+            AsyncImage(url: URL(string: image)) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .shadow(color: .black, radius: 4, x: -8, y: 8)
+                    .padding()
+            } placeholder: { }
         }
         .background(backgroundColor)
         .cornerRadius(13)
