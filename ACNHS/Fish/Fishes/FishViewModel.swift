@@ -11,14 +11,9 @@ final class FishViewModel: ObservableObject {
     
     private let service: ACNHServiceProtocol
     @Published var fishes = [FishData]()
-    @Published var state = State.loading
+    @Published var state = StateEnum.loading
+    private let currentCalendar = CurrentCalendar()
     @AppStorage("OnBoarding") var isOnBoarding = true
-    
-    enum State {
-        case success
-        case loading
-        case error
-    }
     
     init(service: ACNHServiceProtocol = ACNHService()) {
         self.service = service
@@ -40,23 +35,14 @@ final class FishViewModel: ObservableObject {
     }
     
     func makeFishesFromTheNorthernHemisphere() -> [FishData] {
-        let (hour, month) = makeCurrentCalendar()
+        let (hour, month) = currentCalendar.makeCurrentCalendar()
         let filtered = fishes.filter { $0.availability.monthArrayNorthern.contains(month) && $0.availability.timeArray.contains(hour) }
         return filtered
     }
     
     func makeFishesFromTheSouthernHemisphere() -> [FishData] {
-        let (hour, month) = makeCurrentCalendar()
+        let (hour, month) = currentCalendar.makeCurrentCalendar()
         let filtered = fishes.filter { $0.availability.monthArraySouthern.contains(month) && $0.availability.timeArray.contains(hour) }
-        print(filtered.first!)
         return filtered
-    }
-    
-    private func makeCurrentCalendar() -> (Int, Int) {
-        let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let month = calendar.component(.month, from: date)
-        return (hour, month)
     }
 }

@@ -22,25 +22,7 @@ struct AllFishesView: View {
                 .foregroundColor(.white)
                 .padding([.top,.horizontal])
             
-            LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 3)) {
-                ForEach(fishesViewModel.fishes) { fish in
-                    NavigationLink(
-                        destination: FishDetailsView(
-                            fishDetailsViewModel: FishDetailsViewModel(fish: fish),
-                            bodyFishDetailsViewModel: BodyFishDetailsViewModel(fish: fish),
-                            fishDetailsGridViewModel: FishDetailsGridViewModel(fish: fish)
-                        )
-                    ) {
-                        RowMainView(
-                            fileName: fish.fileName,
-                            image: fish.iconURI,
-                            price: fish.price,
-                            backgroundColor: Color("ColorBlueRoyal")
-                        )
-                    }
-                }
-            }
-            .padding()
+            FishLazyVGridView(fishesData: fishesViewModel.fishes)
         }
     }
 }

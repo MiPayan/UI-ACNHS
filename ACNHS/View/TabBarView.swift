@@ -18,36 +18,31 @@ struct TabBarView: View {
         TabView {
             FishesMainView(fishesViewModel: FishViewModel())
                 .tabItem {
-                    Image("Fish")
-                        .imageScale(.large)
+                    Image(systemName: "fish")
                     Text("Fish")
                 }
             
             SeaCreaturesMainView(seaCreaturesViewModel: SeaCreatureViewModel())
                 .tabItem {
-                    Image("SeaCreature")
-                        .imageScale(.small)
+                    Image(systemName: "water.waves")
                     Text("Sea")
                 }
             
             BugsMainView(bugViewModel: BugViewModel())
                 .tabItem {
-                    Image("Butterfly")
-                        .imageScale(.small)
+                    Image(systemName: "ant")
                     Text("Bug")
                 }
             
             FossilsMainView(fossilViewModel: FossilViewModel())
                 .tabItem {
-                    Image("Fossil")
-                        .imageScale(.small)
+                    Image(systemName: "globe.asia.australia")
                     Text("Fossil")
                 }
             
-            CreatureSelectionMainView()
+            CreatureSelectionMainView(fishViewModel: FishViewModel(), seaCreatureViewModel: SeaCreatureViewModel(), bugViewModel: BugViewModel(), fossilViewModel: FossilViewModel())
                 .tabItem {
                     Image(systemName: "text.book.closed")
-                        .imageScale(.small)
                     Text("Critterpedia")
                 }
         }

@@ -13,6 +13,7 @@ final class FossilViewModel: ObservableObject {
     
     private let service: ACNHServiceProtocol
     @Published var fossils = [FossilData]()
+    @Published var state = StateEnum.loading
 
     init(service: ACNHServiceProtocol = ACNHService()) {
         self.service = service
@@ -25,8 +26,8 @@ final class FossilViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.fossils = fossil
                 }
-            case .failure(let error):
-                print(error)
+            case .failure:
+                self.state = .error
             }
         }
     }

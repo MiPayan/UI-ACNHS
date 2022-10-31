@@ -22,25 +22,7 @@ struct AllSeaCreatures: View {
                 .foregroundColor(.white)
                 .padding([.top,.horizontal])
             
-            LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 3)) {
-                ForEach(seaCreaturesViewModel.seaCreatures) { seaCreature in
-                    NavigationLink(
-                        destination: SeaCreatureDetailsView(
-                            seaCreatureDetailsViewModel: SeaCreatureDetailsViewModel(seaCreature: seaCreature),
-                            bodySeaCreatureDetailsViewModel: BodySeaCreatureDetailsViewModel(seaCreature: seaCreature),
-                            seaCreatureDetailsGridViewModel: SeaCreatureDetailsGridViewModel(seaCreature: seaCreature)
-                        )
-                    ) {
-                        RowMainView(
-                            fileName: seaCreature.fileName,
-                            image: seaCreature.iconURI,
-                            price: seaCreature.price,
-                            backgroundColor: Color("ColorBlueNightLite")
-                        )
-                    }
-                }
-            }
-            .padding()
+            SeaCreatureLazyVGridView(seaCreaturesData: seaCreaturesViewModel.seaCreatures)
         }
     }
 }

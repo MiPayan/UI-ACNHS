@@ -9,39 +9,36 @@ import SwiftUI
 
 struct CreatureItemView: View {
     
-    var imageBackground: String
+    var colorBackground: String
     var creatureTitle: String
     var image: String
+    var numberCreature: Int
     @AppStorage("CreatureSelected") private var isSelected = false
     
     var body: some View {
-        ZStack {
-            Image(imageBackground)
-                .resizable()
-                .scaledToFill()
-                .frame(minWidth: 0, maxWidth: .infinity)
-            
+        ZStack {            
+            Color(colorBackground)
             VStack {
                 Spacer()
                 
                 Text(creatureTitle)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .font(.custom("FinkHeavy", size: 20))
                     .padding()
                 
                 Spacer()
                 
-                Image(image)
+                Image(systemName: image)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .foregroundColor(.black)
+                    .frame(width: 80, height: 80, alignment: .center)
+                    .foregroundColor(.white)
                     .padding()
                 
                 Spacer()
                 
-                Text("0/100")
-                    .foregroundColor(.black)
+                Text("0 / \(String(numberCreature))")
+                    .foregroundColor(.white)
                     .font(.custom("FinkHeavy", size: 18))
                     .padding()
                 
@@ -51,10 +48,10 @@ struct CreatureItemView: View {
         .cornerRadius(13)
     }
 }
-
-struct ButtonSelectionBar_Previews: PreviewProvider {
-    static var previews: some View {
-        CreatureItemView(imageBackground: "Beach", creatureTitle: "Fish", image: "Fish")
-            .previewLayout(.sizeThatFits)
-    }
-}
+//
+//struct ButtonSelectionBar_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CreatureItemView(imageBackground: "Beach", creatureTitle: "Fish", image: "Fish")
+//            .previewLayout(.sizeThatFits)
+//    }
+//}

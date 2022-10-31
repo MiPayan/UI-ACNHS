@@ -22,25 +22,7 @@ struct AllBugsView: View {
                 .foregroundColor(.white)
                 .padding([.top,.horizontal])
             
-            LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 3)) {
-                ForEach(bugViewModel.bugs) { bug in
-                    NavigationLink(
-                        destination: BugDetailsView(
-                            budDetailsViewModel: BugDetailsViewModel(bug: bug),
-                            bodyBugDetailsViewModel: BodyBugDetailsViewModel(bug: bug),
-                            bugDetailsGridViewModel: BugDetailsGridViewModel(bug: bug)
-                        )
-                    ) {
-                        RowMainView(
-                            fileName: bug.fileName,
-                            image: bug.iconURI,
-                            price: bug.price,
-                            backgroundColor: Color("ColorGreenDark")
-                        )
-                    }
-                }
-            }
-            .padding()
+            BugLazyVGridView(bugsData: bugViewModel.bugs)
         }
     }
 }

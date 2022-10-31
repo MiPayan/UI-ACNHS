@@ -8,6 +8,19 @@
 import SwiftUI
 
 struct CreatureSelectionMainView: View {
+    
+    @StateObject private var fishViewModel: FishViewModel
+    @StateObject private var seaCreatureViewModel: SeaCreatureViewModel
+    @StateObject private var bugViewModel: BugViewModel
+    @StateObject private var fossilViewModel: FossilViewModel
+    
+    init(fishViewModel: FishViewModel, seaCreatureViewModel: SeaCreatureViewModel ,bugViewModel: BugViewModel, fossilViewModel: FossilViewModel) {
+        _fishViewModel = StateObject(wrappedValue: fishViewModel)
+        _seaCreatureViewModel = StateObject(wrappedValue: seaCreatureViewModel)
+        _bugViewModel = StateObject(wrappedValue: bugViewModel)
+        _fossilViewModel = StateObject(wrappedValue: fossilViewModel)
+    }
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -18,17 +31,19 @@ struct CreatureSelectionMainView: View {
                     HStack(alignment: .top, spacing: 8) {
                         NavigationLink(destination: OwnedFishView(fishViewModel: FishViewModel())) {
                             CreatureItemView(
-                                imageBackground: "Beach",
+                                colorBackground: "ColorBlueRoyal",
                                 creatureTitle: "Fishes",
-                                image: "Fish"
+                                image: "fish",
+                                numberCreature: fishViewModel.fishes.count
                             )
                         }
                         
                         NavigationLink(destination: OwnedSeaCreatureView(seaCreatureViewModel: SeaCreatureViewModel())) {
                             CreatureItemView(
-                                imageBackground: "Sea",
+                                colorBackground: "ColorBlueNight",
                                 creatureTitle: "Sea creatures",
-                                image: "SeaCreature"
+                                image: "water.waves",
+                                numberCreature: seaCreatureViewModel.seaCreatures.count
                             )
                         }
                     }
@@ -36,17 +51,19 @@ struct CreatureSelectionMainView: View {
                     HStack(alignment: .bottom, spacing: 8) {
                         NavigationLink(destination: OwnedBugView(bugViewModel: BugViewModel())) {
                             CreatureItemView(
-                                imageBackground: "Nature",
+                                colorBackground: "ColorGreenDark",
                                 creatureTitle: "Bugs",
-                                image: "Butterfly"
+                                image: "ant",
+                                numberCreature: bugViewModel.bugs.count
                             )
                         }
                         
                         NavigationLink(destination: OwnedFossilView(fossilModelView: FossilViewModel())) {
                             CreatureItemView(
-                                imageBackground: "Underground",
+                                colorBackground: "ColorBrownHeart",
                                 creatureTitle: "Fossils",
-                                image: "Fossil"
+                                image: "globe.asia.australia",
+                                numberCreature: fossilViewModel.fossils.count
                             )
                         }
                     }
@@ -55,12 +72,18 @@ struct CreatureSelectionMainView: View {
                 .padding()
             }
         }
+        .onAppear {
+            fishViewModel.getFishData()
+            seaCreatureViewModel.getSeaCreatureData()
+            bugViewModel.getBugData()
+            fossilViewModel.getFossilData()
+        }
     }
 }
 
-struct CreatureSelectionGrid_Previews: PreviewProvider {
-    static var previews: some View {
-        CreatureSelectionMainView()
-            .previewLayout(.sizeThatFits)
-    }
-}
+//struct CreatureSelectionGrid_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CreatureSelectionMainView()
+//            .previewLayout(.sizeThatFits)
+//    }
+//}

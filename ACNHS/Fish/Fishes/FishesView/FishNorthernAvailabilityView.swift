@@ -17,7 +17,6 @@ struct FishNorthernAvailabilityView: View {
     }
     
     var body: some View {
-        
         VStack(alignment: .leading, spacing: 0) {
             Text("currently_available")
                 .font(.custom("FinkHeavy", size: 26))
@@ -29,6 +28,7 @@ struct FishNorthernAvailabilityView: View {
                     .font(.custom("FinkHeavy", size: 18))
                     .foregroundColor(.white)
                     .padding(.horizontal)
+                
                 Button(action: {
                     withAnimation {
                         isOnBoarding = false
@@ -38,26 +38,7 @@ struct FishNorthernAvailabilityView: View {
                         .foregroundColor(.white)
                 }
             }
-            
-            LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 3)) {
-                ForEach(fishesViewModel.makeFishesFromTheNorthernHemisphere()) { fish in
-                    NavigationLink(
-                        destination: FishDetailsView(
-                            fishDetailsViewModel: FishDetailsViewModel(fish: fish),
-                            bodyFishDetailsViewModel: BodyFishDetailsViewModel(fish: fish),
-                            fishDetailsGridViewModel: FishDetailsGridViewModel(fish: fish)
-                        )
-                    ) {
-                        RowMainView(
-                            fileName: fish.fileName,
-                            image: fish.iconURI,
-                            price: fish.price,
-                            backgroundColor: Color("ColorBlueRoyal")
-                        )
-                    }
-                }
-            }
-            .padding()
+            FishLazyVGridView(fishesData: fishesViewModel.makeFishesFromTheNorthernHemisphere())
         }
     }
 }

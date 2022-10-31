@@ -11,6 +11,8 @@ final class SeaCreatureViewModel: ObservableObject {
     
     private let service: ACNHServiceProtocol
     @Published var seaCreatures = [SeaCreatureData]()
+    @Published var state = StateEnum.loading
+    private let currentCalendar = CurrentCalendar()
     
     init(service: ACNHServiceProtocol = ACNHService()) {
         self.service = service
@@ -23,14 +25,14 @@ final class SeaCreatureViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.seaCreatures = seaCreature
                 }
-            case .failure(let error):
-                print(error)
+            case .failure:
+                self.state = .error
             }
         }
     }
     
     func makeSeaCreatureFromTheNorthernHemisphere() -> [SeaCreatureData] {
-        let (hour, month) = makeCurrentCalendar()
+        let (hour, month) = currentCalendar.makeCurrentCalendar()
         let filtered = seaCreatures.filter {
             $0.availability.monthArrayNorthern.contains(month) && $0.availability.timeArray.contains(hour)
         }
@@ -38,18 +40,10 @@ final class SeaCreatureViewModel: ObservableObject {
     }
     
     func makeSeaCreatureFromTheSouthernHemisphere() -> [SeaCreatureData] {
-        let (hour, month) = makeCurrentCalendar()
+        let (hour, month) = currentCalendar.makeCurrentCalendar()
         let filtered = seaCreatures.filter {
             $0.availability.monthArraySouthern.contains(month) && $0.availability.timeArray.contains(hour)
         }
         return filtered
-    }
-    
-    private func makeCurrentCalendar() -> (Int, Int) {
-        let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let month = calendar.component(.month, from: date)
-        return (hour, month)
     }
 }

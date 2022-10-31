@@ -94,6 +94,11 @@
 		37CA17C329069BE500976CD7 /* FishViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA17C229069BE400976CD7 /* FishViewModelTests.swift */; };
 		37CA17C92906C1F800976CD7 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA17C82906C1F800976CD7 /* NetworkTests.swift */; };
 		37CA17CB2906C70600976CD7 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA17CA2906C70600976CD7 /* ServiceMock.swift */; };
+		37CF5F34290A83980084BFFE /* CurrentCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CF5F33290A83980084BFFE /* CurrentCalendar.swift */; };
+		37CF5F36290A853E0084BFFE /* StateEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CF5F35290A853E0084BFFE /* StateEnum.swift */; };
+		37CF5F3A290AA5BA0084BFFE /* FishLazyVGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CF5F39290AA5BA0084BFFE /* FishLazyVGridView.swift */; };
+		37CF5F3C290AAC230084BFFE /* SeaCreatureLazyVGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CF5F3B290AAC230084BFFE /* SeaCreatureLazyVGridView.swift */; };
+		37CF5F3E290AADDE0084BFFE /* BugLazyVGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CF5F3D290AADDE0084BFFE /* BugLazyVGridView.swift */; };
 		37D42A89285B62B000829A0F /* NetworkingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D42A88285B62B000829A0F /* NetworkingProtocol.swift */; };
 		37D42A8B285B62D000829A0F /* ACNHServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D42A8A285B62D000829A0F /* ACNHServiceProtocol.swift */; };
 		37D5A4802837911600826064 /* OwnedFishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D5A47F2837911600826064 /* OwnedFishView.swift */; };
@@ -212,6 +217,11 @@
 		37CA17C229069BE400976CD7 /* FishViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishViewModelTests.swift; sourceTree = "<group>"; };
 		37CA17C82906C1F800976CD7 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		37CA17CA2906C70600976CD7 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
+		37CF5F33290A83980084BFFE /* CurrentCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCalendar.swift; sourceTree = "<group>"; };
+		37CF5F35290A853E0084BFFE /* StateEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateEnum.swift; sourceTree = "<group>"; };
+		37CF5F39290AA5BA0084BFFE /* FishLazyVGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishLazyVGridView.swift; sourceTree = "<group>"; };
+		37CF5F3B290AAC230084BFFE /* SeaCreatureLazyVGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaCreatureLazyVGridView.swift; sourceTree = "<group>"; };
+		37CF5F3D290AADDE0084BFFE /* BugLazyVGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugLazyVGridView.swift; sourceTree = "<group>"; };
 		37D42A88285B62B000829A0F /* NetworkingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProtocol.swift; sourceTree = "<group>"; };
 		37D42A8A285B62D000829A0F /* ACNHServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACNHServiceProtocol.swift; sourceTree = "<group>"; };
 		37D5A47F2837911600826064 /* OwnedFishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnedFishView.swift; sourceTree = "<group>"; };
@@ -337,6 +347,7 @@
 				375312562849FC280007452D /* BugNorthernAvailabilityView.swift */,
 				375312582849FC340007452D /* BugSouthernAvailabilityView.swift */,
 				3753125A2849FC400007452D /* AllBugsView.swift */,
+				37CF5F3D290AADDE0084BFFE /* BugLazyVGridView.swift */,
 			);
 			path = BugsView;
 			sourceTree = "<group>";
@@ -462,6 +473,7 @@
 		375E1BB428632B5F002EEAF1 /* SeaCreaturesView */ = {
 			isa = PBXGroup;
 			children = (
+				37CF5F3B290AAC230084BFFE /* SeaCreatureLazyVGridView.swift */,
 				379D015428215A000087F2A9 /* SeaCreaturesMainView.swift */,
 				37DD5FCE284F8B1100AC02F7 /* SeaCreatureNorthernAvailabilityView.swift */,
 				37DD5FD0284F8B1F00AC02F7 /* SeaCreatureSouthernAvailabilityView.swift */,
@@ -492,6 +504,7 @@
 		37894EC028625244000A7D9B /* FishesView */ = {
 			isa = PBXGroup;
 			children = (
+				37CF5F39290AA5BA0084BFFE /* FishLazyVGridView.swift */,
 				379D015528215A000087F2A9 /* FishesMainView.swift */,
 				372E5A7C2848B39A005F511B /* FishNorthernAvailabilityView.swift */,
 				372E5A7E2848B47E005F511B /* FishSouthernAvailabilityView.swift */,
@@ -537,6 +550,8 @@
 				379D0167282164F70087F2A9 /* Networking */,
 				379D015F28215E820087F2A9 /* DataModel */,
 				379D015E28215BB90087F2A9 /* View */,
+				37CF5F33290A83980084BFFE /* CurrentCalendar.swift */,
+				37CF5F35290A853E0084BFFE /* StateEnum.swift */,
 				37C1E5F728C760E000B43F1E /* Fish */,
 				37B12A14282D50E0003583F1 /* SeaCreature */,
 				3745990A28D3116300737B90 /* Bug */,
@@ -860,6 +875,7 @@
 				3745990728D2F8D100737B90 /* BodySeaCreatureDetailsViewModel.swift in Sources */,
 				373ED93F2864971400E50960 /* OwnedFossilView.swift in Sources */,
 				37662A7B282D0F2100217ED5 /* RowMainView.swift in Sources */,
+				37CF5F34290A83980084BFFE /* CurrentCalendar.swift in Sources */,
 				372695B7282E5D5A00F2CC3F /* BodyFossilDetailsView.swift in Sources */,
 				379D016D2821684D0087F2A9 /* ACNHService.swift in Sources */,
 				3745992528D32DA600737B90 /* BodyFossilDetailsViewModel.swift in Sources */,
@@ -876,6 +892,7 @@
 				37C1E5F628C7489F00B43F1E /* FishDetailsViewModel.swift in Sources */,
 				37DD5FD3284F8B2900AC02F7 /* AllSeaCreatures.swift in Sources */,
 				379D015728215A000087F2A9 /* BugsMainView.swift in Sources */,
+				37CF5F3A290AA5BA0084BFFE /* FishLazyVGridView.swift in Sources */,
 				37FD00B12834D872003F6353 /* FishViewModel.swift in Sources */,
 				3745990528D2F8BF00737B90 /* SeaCreatureDetailsViewModel.swift in Sources */,
 				372695AB282E4A8100F2CC3F /* BodySeaCreatureDetailsView.swift in Sources */,
@@ -887,8 +904,11 @@
 				379D015C28215A000087F2A9 /* FishesMainView.swift in Sources */,
 				37D42A89285B62B000829A0F /* NetworkingProtocol.swift in Sources */,
 				377158C828294B41003F6C73 /* FishDetailsGridView.swift in Sources */,
+				37CF5F36290A853E0084BFFE /* StateEnum.swift in Sources */,
 				372800C02836342A00F857FB /* ErrorView.swift in Sources */,
 				37F3ED4F28D2017300D10EF5 /* BodyFishDetailsViewModel.swift in Sources */,
+				37CF5F3C290AAC230084BFFE /* SeaCreatureLazyVGridView.swift in Sources */,
+				37CF5F3E290AADDE0084BFFE /* BugLazyVGridView.swift in Sources */,
 				377158C42829395C003F6C73 /* DetailsRowView.swift in Sources */,
 				37D42A8B285B62D000829A0F /* ACNHServiceProtocol.swift in Sources */,
 				37D9C712282914870079BBFC /* String+Image.swift in Sources */,

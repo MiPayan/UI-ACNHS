@@ -9,11 +9,10 @@ import SwiftUI
 
 struct LoadingView: View {
     var body: some View {
-        Color.blue.ignoresSafeArea()
+        Color.clear.ignoresSafeArea()
         VStack {
             ProgressView()
         }
-        .background(.clear)
     }
 }
 

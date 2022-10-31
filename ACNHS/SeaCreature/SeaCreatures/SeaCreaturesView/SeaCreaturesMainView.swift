@@ -29,13 +29,7 @@ struct SeaCreaturesMainView: View {
             .background(
                 LinearGradient(
                     gradient:
-                        Gradient(
-                            colors: [
-                                Color("ColorBlack"),
-                                Color("ColorBlueNight"),
-                                Color("ColorBlueRoyal")
-                            ]
-                        ),
+                        Gradient(colors: [Color("ColorBlack"), Color("ColorBlueNight"), Color("ColorBlueRoyal")]),
                     startPoint: .bottom,
                     endPoint: .top
                 )
