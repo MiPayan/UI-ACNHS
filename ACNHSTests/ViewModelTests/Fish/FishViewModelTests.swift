@@ -11,15 +11,19 @@ import XCTest
 final class FishViewModelTests: XCTestCase {
     
     private var serviceMock: ServiceMock!
+    private var currentCalendarMock: CurrrentCalendarMock!
     private var fishesViewModel: FishViewModel!
     
     override func setUpWithError() throws {
         serviceMock = ServiceMock()
-        fishesViewModel = FishViewModel(service: serviceMock)
+        currentCalendarMock = CurrrentCalendarMock()
+        fishesViewModel = FishViewModel(service: serviceMock, currentCalendar: currentCalendarMock)
     }
     
     override func tearDownWithError() throws {
+        currentCalendarMock = nil
         fishesViewModel = nil
+        serviceMock = nil
     }
     
     func testFailureGetFishes() {
@@ -30,20 +34,21 @@ final class FishViewModelTests: XCTestCase {
         )
         
         fishesViewModel.getFishData()
-        expectation.fulfill()
         
         XCTAssertEqual(1, serviceMock.invokedGetFishesCount)
+        expectation.fulfill()
         waitForExpectations(timeout: 1, handler: nil)
     }
     
     func testSuccessGetFishes() {
-        let expectation = expectation(description: "Success to get recipe.")
+        let expectation = expectation(description: "Success to get fishes.")
         
         serviceMock.stubbedFishResult = (
             .success(fishes)
         )
         
         fishesViewModel.getFishData()
+        
         XCTAssertEqual(1, serviceMock.invokedGetFishesCount)
         expectation.fulfill()
         waitForExpectations(timeout: 1, handler: nil)
@@ -51,11 +56,26 @@ final class FishViewModelTests: XCTestCase {
     
     //    TODO: - Make the two tests below.
     func testMakeFishesFromTheNorthernHemisphere() {
+        let expectation = expectation(description: "Success.")
+        
+        currentCalendarMock.stubbedMakeCurrentCalendar = {
+            (11, 12)
+        }()
+        
         serviceMock.stubbedFishResult = (
             .success(fishes)
         )
+        
         fishesViewModel.getFishData()
+        
+        let currentFishes = fishesViewModel.makeFishesFromTheNorthernHemisphere()
+        
+        XCTAssertEqual(1, currentCalendarMock.invockedMakeCurrentCalendarCount)
         XCTAssertEqual(1, serviceMock.invokedGetFishesCount)
+        XCTAssertEqual(currentFishes.count, 0)
+        
+        expectation.fulfill()
+        waitForExpectations(timeout: 1, handler: nil)
     }
     
     func testMakeFishesFromTheSouthernHemisphere() {

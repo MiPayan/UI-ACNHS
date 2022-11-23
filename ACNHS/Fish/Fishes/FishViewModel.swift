@@ -12,11 +12,15 @@ final class FishViewModel: ObservableObject {
     private let service: ACNHServiceProtocol
     @Published var fishes = [FishData]()
     @Published var state = StateEnum.loading
-    private let currentCalendar = CurrentCalendar()
+    private var currentCalendar: CalendarProtocol
     @AppStorage("OnBoarding") var isOnBoarding = true
     
-    init(service: ACNHServiceProtocol = ACNHService()) {
+    init(
+        service: ACNHServiceProtocol = ACNHService(),
+        currentCalendar: CalendarProtocol = CurrentCalendar()
+    ) {
         self.service = service
+        self.currentCalendar = currentCalendar
     }
     
     func getFishData() {

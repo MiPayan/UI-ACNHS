@@ -91,6 +91,8 @@
 		37B5EC612850CE2000B7A423 /* CreatureItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B5EC602850CE2000B7A423 /* CreatureItemView.swift */; };
 		37C1E5F628C7489F00B43F1E /* FishDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1E5F528C7489F00B43F1E /* FishDetailsViewModel.swift */; };
 		37C2FC2A28254ED200D3F282 /* FishDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2FC2928254ED200D3F282 /* FishDetailsView.swift */; };
+		37C4A354291E60F4003D0F36 /* CalendarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C4A353291E60F4003D0F36 /* CalendarProtocol.swift */; };
+		37C4A356291E619E003D0F36 /* CurrentCalendarMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C4A355291E619E003D0F36 /* CurrentCalendarMock.swift */; };
 		37CA17C329069BE500976CD7 /* FishViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA17C229069BE400976CD7 /* FishViewModelTests.swift */; };
 		37CA17C92906C1F800976CD7 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA17C82906C1F800976CD7 /* NetworkTests.swift */; };
 		37CA17CB2906C70600976CD7 /* ServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA17CA2906C70600976CD7 /* ServiceMock.swift */; };
@@ -214,6 +216,8 @@
 		37B5EC602850CE2000B7A423 /* CreatureItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatureItemView.swift; sourceTree = "<group>"; };
 		37C1E5F528C7489F00B43F1E /* FishDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishDetailsViewModel.swift; sourceTree = "<group>"; };
 		37C2FC2928254ED200D3F282 /* FishDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishDetailsView.swift; sourceTree = "<group>"; };
+		37C4A353291E60F4003D0F36 /* CalendarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarProtocol.swift; path = "../../../../../Creative Cloud Files/CalendarProtocol.swift"; sourceTree = "<group>"; };
+		37C4A355291E619E003D0F36 /* CurrentCalendarMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCalendarMock.swift; sourceTree = "<group>"; };
 		37CA17C229069BE400976CD7 /* FishViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishViewModelTests.swift; sourceTree = "<group>"; };
 		37CA17C82906C1F800976CD7 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		37CA17CA2906C70600976CD7 /* ServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMock.swift; sourceTree = "<group>"; };
@@ -551,6 +555,7 @@
 				379D015F28215E820087F2A9 /* DataModel */,
 				379D015E28215BB90087F2A9 /* View */,
 				37CF5F33290A83980084BFFE /* CurrentCalendar.swift */,
+				37C4A353291E60F4003D0F36 /* CalendarProtocol.swift */,
 				37CF5F35290A853E0084BFFE /* StateEnum.swift */,
 				37C1E5F728C760E000B43F1E /* Fish */,
 				37B12A14282D50E0003583F1 /* SeaCreature */,
@@ -577,6 +582,7 @@
 		379D0136282159EB0087F2A9 /* ACNHSTests */ = {
 			isa = PBXGroup;
 			children = (
+				37C4A355291E619E003D0F36 /* CurrentCalendarMock.swift */,
 				37CA17CA2906C70600976CD7 /* ServiceMock.swift */,
 				37A8BE562909693900DB65AC /* DataMock.swift */,
 				37CA17C82906C1F800976CD7 /* NetworkTests.swift */,
@@ -880,6 +886,7 @@
 				379D016D2821684D0087F2A9 /* ACNHService.swift in Sources */,
 				3745992528D32DA600737B90 /* BodyFossilDetailsViewModel.swift in Sources */,
 				372695B3282E54FC00F2CC3F /* BugDetailsGridView.swift in Sources */,
+				37C4A354291E60F4003D0F36 /* CalendarProtocol.swift in Sources */,
 				373ED94128649A8D00E50960 /* OwnedSeaCreatureView.swift in Sources */,
 				37B12A13282D5000003583F1 /* FossilDetailsView.swift in Sources */,
 				3745991F28D3261400737B90 /* BugDetailsGridViewModel.swift in Sources */,
@@ -962,6 +969,7 @@
 				3779FC952858CC1500D87091 /* ACNHJsonMappingTests.swift in Sources */,
 				37133BD42908258C001D3928 /* BodyBugDetailsViewModelTests.swift in Sources */,
 				37A8BE4B290958CB00DB65AC /* SeaCreatureDetailsViewModelTests.swift in Sources */,
+				37C4A356291E619E003D0F36 /* CurrentCalendarMock.swift in Sources */,
 				37A8BE572909693900DB65AC /* DataMock.swift in Sources */,
 				37CA17C92906C1F800976CD7 /* NetworkTests.swift in Sources */,
 				37133BC229081CFA001D3928 /* SeaCreatureViewModelTests.swift in Sources */,
