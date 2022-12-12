@@ -17,7 +17,7 @@ final class ACNHService: ACNHServiceProtocol {
     }
     
     func getFishData(completionHandler: @escaping ((Result<[FishData], NetworkingError>)) -> Void) {
-        let urlString = "\(endpoint)fish"
+        let urlString = "\(endpoint)fish/"
         session.fetchData(with: urlString) { (result: Result<[FishData], NetworkingError>) in
             switch result {
             case .success(let success):

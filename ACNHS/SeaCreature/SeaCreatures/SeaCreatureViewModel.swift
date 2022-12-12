@@ -10,19 +10,28 @@ import SwiftUI
 final class SeaCreatureViewModel: ObservableObject {
     
     private let service: ACNHServiceProtocol
+    private let mainDispatchQueue: DispatchQueueProtocol
+    private let currentCalendar: CalendarProtocol
     @Published var seaCreatures = [SeaCreatureData]()
     @Published var state = StateEnum.loading
-    private let currentCalendar = CurrentCalendar()
     
-    init(service: ACNHServiceProtocol = ACNHService()) {
+    init(
+        service: ACNHServiceProtocol = ACNHService(),
+        mainDispatchQueue: DispatchQueueProtocol = DispatchQueue.main,
+        currentCalendar: CalendarProtocol = CurrentCalendar()
+    ) {
         self.service = service
+        self.mainDispatchQueue = mainDispatchQueue
+        self.currentCalendar = currentCalendar
     }
     
     func getSeaCreatureData() {
-        service.getSeaCreatureData { result in
+        state = .loading
+        service.getSeaCreatureData { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let seaCreature):
-                DispatchQueue.main.async {
+                self.mainDispatchQueue.async {
                     self.seaCreatures = seaCreature
                 }
             case .failure:

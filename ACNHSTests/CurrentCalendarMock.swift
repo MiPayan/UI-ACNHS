@@ -8,7 +8,7 @@
 import Foundation
 @testable import ACNHS
 
-final class CurrrentCalendarMock: CalendarProtocol {
+final class CurrentCalendarMock: CalendarProtocol {
     
     var invockedMakeCurrentCalendarCount = 0
     var stubbedMakeCurrentCalendar: (Int, Int)!

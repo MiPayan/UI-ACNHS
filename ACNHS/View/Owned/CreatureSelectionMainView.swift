@@ -14,7 +14,11 @@ struct CreatureSelectionMainView: View {
     @StateObject private var bugViewModel: BugViewModel
     @StateObject private var fossilViewModel: FossilViewModel
     
-    init(fishViewModel: FishViewModel, seaCreatureViewModel: SeaCreatureViewModel ,bugViewModel: BugViewModel, fossilViewModel: FossilViewModel) {
+    init(fishViewModel: FishViewModel,
+         seaCreatureViewModel: SeaCreatureViewModel ,
+         bugViewModel: BugViewModel,
+         fossilViewModel: FossilViewModel
+    ) {
         _fishViewModel = StateObject(wrappedValue: fishViewModel)
         _seaCreatureViewModel = StateObject(wrappedValue: seaCreatureViewModel)
         _bugViewModel = StateObject(wrappedValue: bugViewModel)

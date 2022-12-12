@@ -20,7 +20,12 @@ struct GlobalOwnedRowView: View {
                     .scaledToFit()
                     .shadow(color: .black, radius: 4, x: -8, y: 8)
                     .padding()
-            } placeholder: { }
+            } placeholder: {
+                Image(systemName: "fish")
+                    .resizable()
+                    .scaledToFit()
+                    .padding()
+            }
         }
         .background(backgroundColor)
         .cornerRadius(13)

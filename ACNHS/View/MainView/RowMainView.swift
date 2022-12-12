@@ -13,7 +13,6 @@ struct RowMainView: View {
     @State var image: String
     @State var price: Int
     @State var backgroundColor: Color
-    @AppStorage("SaveRow") var isTappedTwice = false
     
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
@@ -27,7 +26,7 @@ struct RowMainView: View {
                 image
                     .resizable()
                     .scaledToFit()
-                    .colorMultiply(isTappedTwice ? .gray : .white)
+//                    .colorMultiply(isTappedTwice ? .gray : .white)
                     .shadow(color: .black, radius: 4, x: -8, y: 8)
                     .padding()
             } placeholder: { }
@@ -45,14 +44,11 @@ struct RowMainView: View {
         .frame(minHeight: 200)
         .background(backgroundColor)
         .cornerRadius(12)
-        .onTapGesture(count: 2) {
-            isTappedTwice.toggle()
-        }
     }
 }
 
 
-struct GlobalRowView_Previews: PreviewProvider {
+struct RowMainView_Previews: PreviewProvider {
     static var previews: some View {
         RowMainView(
             fileName: "Fish name",

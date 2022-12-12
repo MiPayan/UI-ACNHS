@@ -48,10 +48,15 @@ struct CreatureItemView: View {
         .cornerRadius(13)
     }
 }
-//
-//struct ButtonSelectionBar_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CreatureItemView(imageBackground: "Beach", creatureTitle: "Fish", image: "Fish")
-//            .previewLayout(.sizeThatFits)
-//    }
-//}
+
+struct ButtonSelectionBar_Previews: PreviewProvider {
+    static var previews: some View {
+        CreatureItemView(
+            colorBackground: "ColorBlueRoyal",
+            creatureTitle: "Fish",
+            image: "fish",
+            numberCreature: 1
+        )
+            .previewLayout(.sizeThatFits)
+    }
+}

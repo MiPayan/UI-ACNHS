@@ -12,18 +12,22 @@ import SwiftUI
 final class FossilViewModel: ObservableObject {
     
     private let service: ACNHServiceProtocol
+    private let mainDispatchQueue: DispatchQueueProtocol
     @Published var fossils = [FossilData]()
     @Published var state = StateEnum.loading
 
-    init(service: ACNHServiceProtocol = ACNHService()) {
+    init(service: ACNHServiceProtocol = ACNHService(), mainDispatchQueue: DispatchQueueProtocol = DispatchQueue.main) {
         self.service = service
+        self.mainDispatchQueue = mainDispatchQueue
     }
     
     func getFossilData() {
-        service.getFossilData { result in
+        state = .loading
+        service.getFossilData { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let fossil):
-                DispatchQueue.main.async {
+                self.mainDispatchQueue.async {
                     self.fossils = fossil
                 }
             case .failure:

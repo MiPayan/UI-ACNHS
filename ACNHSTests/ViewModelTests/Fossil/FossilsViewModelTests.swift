@@ -22,28 +22,29 @@ final class FossilsViewModelTests: XCTestCase {
         fossilsViewModel = nil
     }
     
-    func testFailureGetFishes() {
-        let expectation = expectation(description: "Failure to get fishes.")
+    func testFailureGetFossils() {
+        let expectation = expectation(description: "Failure to get fossils.")
         
         serviceMock.stubbedFossilResult = (
             .failure(.error)
         )
         
         fossilsViewModel.getFossilData()
-        expectation.fulfill()
         
         XCTAssertEqual(1, serviceMock.invokedGetFossilsCount)
+        expectation.fulfill()
         waitForExpectations(timeout: 1, handler: nil)
     }
     
-    func testSuccessGetFishes() {
-        let expectation = expectation(description: "Success to get recipe.")
+    func testSuccessGetFossils() {
+        let expectation = expectation(description: "Success to get fossils.")
         
         serviceMock.stubbedFossilResult = (
             .success(fossils)
         )
         
         fossilsViewModel.getFossilData()
+        
         XCTAssertEqual(1, serviceMock.invokedGetFossilsCount)
         expectation.fulfill()
         waitForExpectations(timeout: 1, handler: nil)

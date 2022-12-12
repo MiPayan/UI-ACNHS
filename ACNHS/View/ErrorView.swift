@@ -14,44 +14,47 @@ struct ErrorView: View {
     private let cornerRadius: CGFloat = 13
     
     var body: some View {
-        VStack() {
-            Image("Error")
-                .resizable()
-                .scaledToFit()
-                .background(Color("ColorYellow"))
+        ZStack {
+            Color.clear
+            VStack() {
+                Image("Error")
+                    .resizable()
+                    .scaledToFit()
+                    .background(Color("ColorYellow"))
                 
-            
-            Text(errorText)
-                .font(.custom("FinkHeavy", size: 20))
-                .foregroundColor(Color("ColorPink"))
-                .multilineTextAlignment(.center)
-            
-            Button(action: {
-                // TODO: - Doit réaliser l'action.
-            }) {
+                Text(errorText)
+                    .font(.custom("FinkHeavy", size: 18))
+                    .foregroundColor(Color("ColorPink"))
+                    .multilineTextAlignment(.center)
                 
-                ZStack {
-                    Rectangle()
-                        .frame(height: 47, alignment: .center)
-                        .foregroundColor(Color("ColorYellow"))
-                        .cornerRadius(cornerRadius)
-                        .padding(.horizontal)
+                Button(action: {
+                    // TODO: - Doit réaliser l'action.
+                }) {
                     
-                    Text("Refresh")
-                        .font(.custom("FinkHeavy", size: 26))
-                        .foregroundColor(Color("ColorBrown"))
-                        .offset(y: 4)
+                    ZStack {
+                        Rectangle()
+                            .frame(height: 47, alignment: .center)
+                            .foregroundColor(Color("ColorYellow"))
+                            .cornerRadius(cornerRadius)
+                            .padding(.horizontal)
+                        
+                        Text("Refresh")
+                            .font(.custom("FinkHeavy", size: 26))
+                            .foregroundColor(Color("ColorBrown"))
+                            .offset(y: 4)
+                    }
                 }
+                
+                Text(rememberText)
+                    .font(.custom("FinkHeavy", size: 15))
+                    .foregroundColor(Color("ColorPink"))
+                    .multilineTextAlignment(.center)
+                    .padding([.horizontal, .bottom])
             }
-            
-            Text(rememberText)
-                .font(.custom("FinkHeavy", size: 15))
-                .foregroundColor(Color("ColorPink"))
-                .multilineTextAlignment(.center)
-                .padding([.horizontal, .bottom])
+            .background(Color("ColorBeige"))
+            .cornerRadius(cornerRadius)
+            .padding(32)
         }
-        .background(Color("ColorBeige"))
-        .cornerRadius(cornerRadius)
     }
 }
 

@@ -11,19 +11,27 @@ import XCTest
 final class BugViewModelTests: XCTestCase {
     
     private var serviceMock: ServiceMock!
+    private var currentCalendarMock: CurrentCalendarMock!
     private var bugsViewModel: BugViewModel!
     
     override func setUpWithError() throws {
         serviceMock = ServiceMock()
-        bugsViewModel = BugViewModel(service: serviceMock)
+        currentCalendarMock = CurrentCalendarMock()
+        bugsViewModel = BugViewModel(
+            service: serviceMock,
+            mainDispatchQueue: DispatchQueueMock(),
+            currentCalendar: currentCalendarMock
+        )
     }
     
     override func tearDownWithError() throws {
+        serviceMock = nil
+        currentCalendarMock = nil
         bugsViewModel = nil
     }
     
-    func testFailureGetFishes() {
-        let expectation = expectation(description: "Failure to get fishes.")
+    func testFailureGetBugs() {
+        let expectation = expectation(description: "Failure to get bugs.")
         
         serviceMock.stubbedBugResult = (
             .failure(.error)
@@ -36,8 +44,8 @@ final class BugViewModelTests: XCTestCase {
         waitForExpectations(timeout: 1, handler: nil)
     }
     
-    func testSuccessGetFishes() {
-        let expectation = expectation(description: "Success to get recipe.")
+    func testSuccessGetBugs() {
+        let expectation = expectation(description: "Success to get bugs.")
         
         serviceMock.stubbedBugResult = (
             .success(bugs)
@@ -49,20 +57,43 @@ final class BugViewModelTests: XCTestCase {
         waitForExpectations(timeout: 1, handler: nil)
     }
     
-    //    TODO: - Make the two tests below.
     func testMakeBugsFromTheNorthernHemisphere() {
+        let expectation = expectation(description: "Sort bug from the northern hemisphere.")
+        currentCalendarMock.stubbedMakeCurrentCalendar = {
+            (11, 12)
+        }()
+        
         serviceMock.stubbedBugResult = (
             .success(bugs)
         )
+        
         bugsViewModel.getBugData()
+        let currentBugs = bugsViewModel.makeBugFromTheNorthernHemisphere()
+        
+        XCTAssertEqual(1, currentCalendarMock.invockedMakeCurrentCalendarCount)
         XCTAssertEqual(1, serviceMock.invokedGetBugsCount)
+        XCTAssertEqual(currentBugs.count, 14)
+        expectation.fulfill()
+        waitForExpectations(timeout: 1, handler: nil)
     }
     
     func testMakeBugsFromTheSouthernHemisphere() {
+        let expectation = expectation(description: "Sort bug from the southern hemisphere.")
+        currentCalendarMock.stubbedMakeCurrentCalendar = {
+            (11, 12)
+        }()
+        
         serviceMock.stubbedBugResult = (
             .success(bugs)
         )
+        
         bugsViewModel.getBugData()
+        let currentBugs = bugsViewModel.makeBugFromTheSouthernHemisphere()
+        
+        XCTAssertEqual(1, currentCalendarMock.invockedMakeCurrentCalendarCount)
         XCTAssertEqual(1, serviceMock.invokedGetBugsCount)
+        XCTAssertEqual(currentBugs.count, 35)
+        expectation.fulfill()
+        waitForExpectations(timeout: 1, handler: nil)
     }
 }
