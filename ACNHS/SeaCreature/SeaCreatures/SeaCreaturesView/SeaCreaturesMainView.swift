@@ -10,7 +10,6 @@ import SwiftUI
 struct SeaCreaturesMainView: View {
     
     @StateObject private var seaCreaturesViewModel: SeaCreatureViewModel
-    @AppStorage("OnBoarding") private var isOnBoarding = true
     
     init(seaCreaturesViewModel: SeaCreatureViewModel) {
         _seaCreaturesViewModel = StateObject(wrappedValue: seaCreaturesViewModel)
@@ -18,23 +17,30 @@ struct SeaCreaturesMainView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                if isOnBoarding {
-                    SeaCreatureNorthernAvailabilityView(seaCreaturesViewModel: seaCreaturesViewModel)
-                } else {
-                    SeaCreatureSouthernAvailabilityView(seaCreaturesViewModel: seaCreaturesViewModel)
+            switch seaCreaturesViewModel.state {
+            case .success:
+                ScrollView {
+                    if seaCreaturesViewModel.isOnBoarding {
+                        SeaCreatureNorthernAvailabilityView(seaCreaturesViewModel: seaCreaturesViewModel)
+                    } else {
+                        SeaCreatureSouthernAvailabilityView(seaCreaturesViewModel: seaCreaturesViewModel)
+                    }
+                    AllSeaCreatures(seaCreaturesViewModel: seaCreaturesViewModel)
                 }
-                AllSeaCreatures(seaCreaturesViewModel: seaCreaturesViewModel)
-            }
-            .background(
-                LinearGradient(
-                    gradient:
-                        Gradient(colors: [Color("ColorBlack"), Color("ColorBlueNight"), Color("ColorBlueRoyal")]),
-                    startPoint: .bottom,
-                    endPoint: .top
+                .background(
+                    LinearGradient(
+                        gradient:
+                            Gradient(colors: [Color("ColorBlack"), Color("ColorBlueNight"), Color("ColorBlueRoyal")]),
+                        startPoint: .bottom,
+                        endPoint: .top
+                    )
                 )
-            )
-            .navigationBarHidden(true)
+                .navigationBarHidden(true)
+            case .loading:
+                LoadingView()
+            case .error:
+                ErrorView()
+            }
         }
         .onAppear {
             seaCreaturesViewModel.getSeaCreatureData()

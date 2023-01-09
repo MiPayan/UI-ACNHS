@@ -9,59 +9,50 @@ import SwiftUI
 
 struct ErrorView: View {
     
-    private let errorText = "We have a problem.\nWe're trying to fix it as quickly as possible. "
-    private let rememberText = "(Remember to activate your cellular data)"
-    private let cornerRadius: CGFloat = 13
-    
     var body: some View {
-        ZStack {
-            Color.clear
-            VStack() {
-                Image("Error")
-                    .resizable()
-                    .scaledToFit()
-                    .background(Color("ColorYellow"))
+        VStack() {
+            Image("Error")
+                .resizable()
+                .scaledToFit()
+                .background(Color("ColorYellow"))
+            
+            Text("error_text")
+                .font(.custom("FinkHeavy", size: 18))
+                .foregroundColor(.black)
+                .multilineTextAlignment(.center)
+            
+            Button(action: {
                 
-                Text(errorText)
-                    .font(.custom("FinkHeavy", size: 18))
-                    .foregroundColor(Color("ColorPink"))
-                    .multilineTextAlignment(.center)
-                
-                Button(action: {
-                    // TODO: - Doit réaliser l'action.
-                }) {
+            }) {
+                ZStack {
+                    Rectangle()
+                        .frame(height: 42, alignment: .center)
+                        .foregroundColor(Color("ColorYellow"))
+                        .cornerRadius(13)
+                        .padding(.horizontal)
                     
-                    ZStack {
-                        Rectangle()
-                            .frame(height: 47, alignment: .center)
-                            .foregroundColor(Color("ColorYellow"))
-                            .cornerRadius(cornerRadius)
-                            .padding(.horizontal)
-                        
-                        Text("Refresh")
-                            .font(.custom("FinkHeavy", size: 26))
-                            .foregroundColor(Color("ColorBrown"))
-                            .offset(y: 4)
-                    }
+                    Text("refresh")
+                        .font(.custom("FinkHeavy", size: 26))
+                        .foregroundColor(.brown)
+                        .offset(y: 4)
                 }
-                
-                Text(rememberText)
-                    .font(.custom("FinkHeavy", size: 15))
-                    .foregroundColor(Color("ColorPink"))
-                    .multilineTextAlignment(.center)
-                    .padding([.horizontal, .bottom])
             }
-            .background(Color("ColorBeige"))
-            .cornerRadius(cornerRadius)
-            .padding(32)
+            
+            Text("remember_text")
+                .font(.custom("FinkHeavy", size: 15))
+                .foregroundColor(.black)
+                .multilineTextAlignment(.center)
+                .padding([.horizontal, .bottom])
         }
+        .background(Color("ColorBeige"))
+        .cornerRadius(13)
+        .padding(32)
     }
 }
 
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
         ErrorView()
-            .padding()
             .previewLayout(.sizeThatFits)
     }
 }

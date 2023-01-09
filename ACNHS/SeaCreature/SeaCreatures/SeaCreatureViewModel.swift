@@ -13,7 +13,8 @@ final class SeaCreatureViewModel: ObservableObject {
     private let mainDispatchQueue: DispatchQueueProtocol
     private let currentCalendar: CalendarProtocol
     @Published var seaCreatures = [SeaCreatureData]()
-    @Published var state = StateEnum.loading
+    @Published private(set) var state = StateEnum.loading
+    @AppStorage("OnBoarding") var isOnBoarding = true
     
     init(
         service: ACNHServiceProtocol = ACNHService(),
@@ -28,10 +29,11 @@ final class SeaCreatureViewModel: ObservableObject {
     func getSeaCreatureData() {
         state = .loading
         service.getSeaCreatureData { [weak self] result in
-            guard let self = self else { return }
+            guard let self else { return }
             switch result {
             case .success(let seaCreature):
                 self.mainDispatchQueue.async {
+                    self.state = .success
                     self.seaCreatures = seaCreature
                 }
             case .failure:

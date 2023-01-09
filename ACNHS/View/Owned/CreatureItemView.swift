@@ -9,11 +9,10 @@ import SwiftUI
 
 struct CreatureItemView: View {
     
-    var colorBackground: String
-    var creatureTitle: String
-    var image: String
-    var numberCreature: Int
-    @AppStorage("CreatureSelected") private var isSelected = false
+    private(set) var colorBackground: String
+    private(set) var creatureTitle: String
+    private(set) var image: String
+    private(set) var numberCreature: Int
     
     var body: some View {
         ZStack {            

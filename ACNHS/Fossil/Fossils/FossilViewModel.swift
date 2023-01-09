@@ -24,10 +24,11 @@ final class FossilViewModel: ObservableObject {
     func getFossilData() {
         state = .loading
         service.getFossilData { [weak self] result in
-            guard let self = self else { return }
+            guard let self else { return }
             switch result {
             case .success(let fossil):
                 self.mainDispatchQueue.async {
+                    self.state = .success
                     self.fossils = fossil
                 }
             case .failure:

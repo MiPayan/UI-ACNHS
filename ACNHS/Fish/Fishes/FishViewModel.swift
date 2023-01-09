@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-final class FishViewModel: ObservableObject {
+final class FishViewModel: ObservableObject {   
     
     private let service: ACNHServiceProtocol
     private let mainDispatchQueue: DispatchQueueProtocol
     private let currentCalendar: CalendarProtocol
     @Published var fishes = [FishData]()
-    @Published var state = StateEnum.loading
+    @Published private(set) var state = StateEnum.loading
     @AppStorage("OnBoarding") var isOnBoarding = true
     
     init(
@@ -29,15 +29,15 @@ final class FishViewModel: ObservableObject {
     func getFishData() {
         state = .loading
         service.getFishData { [weak self] result in
-            guard let self = self else { return }
-            self.mainDispatchQueue.async {
-                switch result {
-                case .success(let fishes):
+            guard let self else { return }
+            switch result {
+            case .success(let fishes):
+                self.mainDispatchQueue.async {
                     self.state = .success
                     self.fishes = fishes
-                case .failure:
-                    self.state = .error
                 }
+            case .failure:
+                self.state = .error
             }
         }
     }

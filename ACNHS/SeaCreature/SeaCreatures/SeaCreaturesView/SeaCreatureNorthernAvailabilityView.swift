@@ -41,9 +41,3 @@ struct SeaCreatureNorthernAvailabilityView: View {
         }
     }
 }
-
-struct SeaCreatureNorthernAvailabilityView_Previews: PreviewProvider {
-    static var previews: some View {
-        SeaCreatureNorthernAvailabilityView(seaCreaturesViewModel: SeaCreatureViewModel())
-    }
-}

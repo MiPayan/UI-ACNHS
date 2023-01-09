@@ -46,7 +46,7 @@
 		3753125B2849FC400007452D /* AllBugsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753125A2849FC400007452D /* AllBugsView.swift */; };
 		3763B65D2823CDD20026D594 /* ConstantPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3763B65C2823CDD20026D594 /* ConstantPreview.swift */; };
 		3763B6602823CE7C0026D594 /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3763B65F2823CE7C0026D594 /* CodableBundleExtension.swift */; };
-		37662A7B282D0F2100217ED5 /* RowMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37662A7A282D0F2100217ED5 /* RowMainView.swift */; };
+		37662A7B282D0F2100217ED5 /* ItemMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37662A7A282D0F2100217ED5 /* ItemMainView.swift */; };
 		37662A7D282D164D00217ED5 /* HeaderDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37662A7C282D164D00217ED5 /* HeaderDetailsView.swift */; };
 		376B88BF2822A9190080EF5A /* Fishes.json in Resources */ = {isa = PBXBuildFile; fileRef = 376B88BE2822A9190080EF5A /* Fishes.json */; };
 		376DA24A294738A200D487A8 /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376DA249294738A200D487A8 /* DispatchQueue.swift */; };
@@ -91,8 +91,6 @@
 		37B12A16282D5234003583F1 /* SeaCreatureDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B12A15282D5234003583F1 /* SeaCreatureDetailsView.swift */; };
 		37B5EC5F2850CB0100B7A423 /* CreatureSelectionMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B5EC5E2850CB0100B7A423 /* CreatureSelectionMainView.swift */; };
 		37B5EC612850CE2000B7A423 /* CreatureItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B5EC602850CE2000B7A423 /* CreatureItemView.swift */; };
-		37BD7529293E117F00926DBB /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 37BD7528293E117F00926DBB /* Realm */; };
-		37BD752B293E117F00926DBB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 37BD752A293E117F00926DBB /* RealmSwift */; };
 		37C1E5F628C7489F00B43F1E /* FishDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C1E5F528C7489F00B43F1E /* FishDetailsViewModel.swift */; };
 		37C2FC2A28254ED200D3F282 /* FishDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C2FC2928254ED200D3F282 /* FishDetailsView.swift */; };
 		37C4A354291E60F4003D0F36 /* CalendarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C4A353291E60F4003D0F36 /* CalendarProtocol.swift */; };
@@ -173,7 +171,7 @@
 		3753125A2849FC400007452D /* AllBugsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBugsView.swift; sourceTree = "<group>"; };
 		3763B65C2823CDD20026D594 /* ConstantPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantPreview.swift; sourceTree = "<group>"; };
 		3763B65F2823CE7C0026D594 /* CodableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
-		37662A7A282D0F2100217ED5 /* RowMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowMainView.swift; sourceTree = "<group>"; };
+		37662A7A282D0F2100217ED5 /* ItemMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemMainView.swift; sourceTree = "<group>"; };
 		37662A7C282D164D00217ED5 /* HeaderDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDetailsView.swift; sourceTree = "<group>"; };
 		376B88BE2822A9190080EF5A /* Fishes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Fishes.json; sourceTree = "<group>"; };
 		376DA249294738A200D487A8 /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
@@ -254,8 +252,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37BD752B293E117F00926DBB /* RealmSwift in Frameworks */,
-				37BD7529293E117F00926DBB /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,8 +314,8 @@
 			children = (
 				377581CD2860A03E00B55329 /* GridSetting.swift */,
 				379D012A282159EA0087F2A9 /* Assets.xcassets */,
-				373380C428252CB5005FE900 /* FinkHeavy.ttf */,
 				379F4F0D28F6BE9C0088B150 /* Localizable.strings */,
+				373380C428252CB5005FE900 /* FinkHeavy.ttf */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -467,8 +463,8 @@
 		3745992E28D339F200737B90 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				377158C32829395C003F6C73 /* DetailsRowView.swift */,
 				37662A7C282D164D00217ED5 /* HeaderDetailsView.swift */,
+				377158C32829395C003F6C73 /* DetailsRowView.swift */,
 				372695B0282E51C700F2CC3F /* FooterDetailsView.swift */,
 			);
 			path = Details;
@@ -477,7 +473,7 @@
 		3745992F28D33A0000737B90 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				37662A7A282D0F2100217ED5 /* RowMainView.swift */,
+				37662A7A282D0F2100217ED5 /* ItemMainView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -790,8 +786,6 @@
 			);
 			name = ACNHS;
 			packageProductDependencies = (
-				37BD7528293E117F00926DBB /* Realm */,
-				37BD752A293E117F00926DBB /* RealmSwift */,
 			);
 			productName = ACNHS;
 			productReference = 379D0123282159E90087F2A9 /* ACNHS.app */;
@@ -844,7 +838,6 @@
 			);
 			mainGroup = 379D011A282159E90087F2A9;
 			packageReferences = (
-				37BD7527293E117F00926DBB /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 379D0124282159E90087F2A9 /* Products */;
 			projectDirPath = "";
@@ -893,7 +886,7 @@
 				37DD5FCF284F8B1100AC02F7 /* SeaCreatureNorthernAvailabilityView.swift in Sources */,
 				3745990728D2F8D100737B90 /* BodySeaCreatureDetailsViewModel.swift in Sources */,
 				373ED93F2864971400E50960 /* OwnedFossilView.swift in Sources */,
-				37662A7B282D0F2100217ED5 /* RowMainView.swift in Sources */,
+				37662A7B282D0F2100217ED5 /* ItemMainView.swift in Sources */,
 				37CF5F34290A83980084BFFE /* CurrentCalendar.swift in Sources */,
 				372695B7282E5D5A00F2CC3F /* BodyFossilDetailsView.swift in Sources */,
 				379D016D2821684D0087F2A9 /* ACNHService.swift in Sources */,
@@ -1268,30 +1261,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		37BD7527293E117F00926DBB /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		37BD7528293E117F00926DBB /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 37BD7527293E117F00926DBB /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		37BD752A293E117F00926DBB /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 37BD7527293E117F00926DBB /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 379D011B282159E90087F2A9 /* Project object */;
 }

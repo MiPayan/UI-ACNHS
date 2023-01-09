@@ -21,7 +21,7 @@ struct BugLazyVGridView: View {
                         bugDetailsGridViewModel: BugDetailsGridViewModel(bug: bug)
                     )
                 ) {
-                    RowMainView(
+                    ItemMainView(
                         fileName: bug.fileName,
                         image: bug.iconURI,
                         price: bug.price,

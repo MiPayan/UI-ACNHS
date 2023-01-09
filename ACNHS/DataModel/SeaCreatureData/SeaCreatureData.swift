@@ -8,7 +8,7 @@
 import Foundation
 
 struct SeaCreatureData: Codable, Identifiable {
-    let id: Int
+    var id: Int
     let fileName: String
     let name: Name
     let availability: SeaAvailability

@@ -11,12 +11,14 @@ struct BodyFishDetailsView: View {
     
     let bodyFishDetailsViewModel: BodyFishDetailsViewModel
     let fishDetailsGridViewModel: FishDetailsGridViewModel
+    @AppStorage("SaveItem") var isTappedTwice = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             Text(bodyFishDetailsViewModel.fileName)
                 .foregroundColor(Color("ColorBlueOcean"))
                 .font(.custom("FinkHeavy", size: 35))
+            
             
             Text(bodyFishDetailsViewModel.catchPhrase)
                 .foregroundColor(Color("ColorBlueRoyal"))
@@ -28,10 +30,13 @@ struct BodyFishDetailsView: View {
         .padding()
     }
 }
-//
-//struct BodyFishDetailsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BodyFishDetailsView(fishDetailsViewModel: FishDetailsViewModel(fish: fishes[0]))
-//            .previewLayout(.sizeThatFits)
-//    }
-//}
+
+struct BodyFishDetailsView_Previews: PreviewProvider {
+    static var previews: some View {
+        BodyFishDetailsView(
+            bodyFishDetailsViewModel: BodyFishDetailsViewModel(fish: fishes[0]),
+            fishDetailsGridViewModel: FishDetailsGridViewModel(fish: fishes[0])
+        )
+        .previewLayout(.sizeThatFits)
+    }
+}

@@ -30,7 +30,7 @@ final class Networking: NetworkingProtocol {
                 handler(.failure(.error))
             }
             
-            guard let data = data else {
+            guard let data else {
                 handler(.failure(.noData))
                 return
             }

@@ -10,7 +10,6 @@ import SwiftUI
 struct BugsMainView: View {
     
     @StateObject private var bugViewModel: BugViewModel
-    @AppStorage("OnBoarding") private var isOnBoarding = true
     
     init(bugViewModel: BugViewModel) {
         _bugViewModel = StateObject(wrappedValue: bugViewModel)
@@ -18,23 +17,30 @@ struct BugsMainView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                if isOnBoarding {
-                    BugNorthernAvailabilityView(bugViewModel: bugViewModel)
-                } else {
-                    BugSouthernAvailabilityView(bugViewModel: bugViewModel)
+            switch bugViewModel.state {
+            case .success:
+                ScrollView {
+                    if bugViewModel.isOnBoarding {
+                        BugNorthernAvailabilityView(bugViewModel: bugViewModel)
+                    } else {
+                        BugSouthernAvailabilityView(bugViewModel: bugViewModel)
+                    }
+                    AllBugsView(bugViewModel: bugViewModel)
                 }
-                AllBugsView(bugViewModel: bugViewModel)
-            }
-            .background(
-                LinearGradient(
-                    gradient:
-                        Gradient(colors: [Color("ColorBlack"), Color("ColorGreenDark"), Color("ColorGreenGrass")]),
-                    startPoint: .bottom,
-                    endPoint: .top
+                .background(
+                    LinearGradient(
+                        gradient:
+                            Gradient(colors: [Color("ColorBlack"), Color("ColorGreenDark"), Color("ColorGreenGrass")]),
+                        startPoint: .bottom,
+                        endPoint: .top
+                    )
                 )
-            )
-            .navigationBarHidden(true)
+                .navigationBarHidden(true)
+            case .loading:
+                LoadingView()
+            case .error:
+                ErrorView()
+            }
         }
         .onAppear {
             bugViewModel.getBugData()

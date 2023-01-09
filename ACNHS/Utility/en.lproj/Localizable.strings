@@ -6,7 +6,6 @@
  
  */
 
-
 "currently_available" = "Currently available";
 "northern_hemisphere_parenthese" = "(Northern hemisphere)";
 "southern_hemisphere_parenthese" = "(Southern hemisphere)";
@@ -34,3 +33,9 @@
 "northern_hemisphere" = "Northern hemisphere";
 "southern_hemisphere" = "Southern hemisphere";
 "speed" = "Speed";
+
+// MARK: - ErrorView
+
+"refresh" = "Refresh";
+"error_text" = "We have a problem.\nWe're trying to fix it as quickly as possible.";
+"remember_text" = "Remember to activate your cellular data";

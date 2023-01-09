@@ -11,6 +11,7 @@ struct TabBarView: View {
     
     init() {
         UITabBar.appearance().barTintColor = UIColor(named: "ColorSand")
+        UITabBar.appearance().backgroundColor = UIColor(named: "ColorSand")
         UITabBar.appearance().unselectedItemTintColor = .black
     }
     
@@ -40,13 +41,18 @@ struct TabBarView: View {
                     Text("Fossil")
                 }
             
-            CreatureSelectionMainView(fishViewModel: FishViewModel(), seaCreatureViewModel: SeaCreatureViewModel(), bugViewModel: BugViewModel(), fossilViewModel: FossilViewModel())
-                .tabItem {
-                    Image(systemName: "text.book.closed")
-                    Text("Critterpedia")
-                }
+            CreatureSelectionMainView(
+                fishViewModel: FishViewModel(),
+                seaCreatureViewModel: SeaCreatureViewModel(),
+                bugViewModel: BugViewModel(),
+                fossilViewModel: FossilViewModel()
+            )
+            .tabItem {
+                Image(systemName: "text.book.closed")
+                Text("Critterpedia")
+            }
         }
-        .accentColor(.white)
+        .accentColor(.brown)
     }
 }
 

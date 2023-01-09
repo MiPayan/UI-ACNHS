@@ -84,10 +84,3 @@ struct CreatureSelectionMainView: View {
         }
     }
 }
-
-//struct CreatureSelectionGrid_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CreatureSelectionMainView()
-//            .previewLayout(.sizeThatFits)
-//    }
-//}

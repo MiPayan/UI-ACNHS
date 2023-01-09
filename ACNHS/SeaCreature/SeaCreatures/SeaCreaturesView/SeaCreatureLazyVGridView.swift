@@ -21,7 +21,7 @@ struct SeaCreatureLazyVGridView: View {
                         seaCreatureDetailsGridViewModel: SeaCreatureDetailsGridViewModel(seaCreature: seaCreature)
                     )
                 ) {
-                    RowMainView(
+                    ItemMainView(
                         fileName: seaCreature.fileName,
                         image: seaCreature.iconURI,
                         price: seaCreature.price,

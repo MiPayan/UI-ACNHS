@@ -28,3 +28,9 @@ struct FishData: Codable, Identifiable {
         case iconURI = "icon_uri"
     }
 }
+
+extension FishData: Equatable {
+    static func == (lhs: FishData, rhs: FishData) -> Bool {
+        lhs.id == rhs.id
+    }
+}

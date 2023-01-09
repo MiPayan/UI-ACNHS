@@ -9,8 +9,8 @@ import SwiftUI
 
 struct GlobalOwnedRowView: View {
     
-    @State var image: String
-    @State var backgroundColor: Color
+    @State private(set) var image: String
+    @State private(set) var backgroundColor: Color
     
     var body: some View {
         VStack(alignment: .center, spacing: 0) {

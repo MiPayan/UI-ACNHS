@@ -1,5 +1,5 @@
 //
-//  GlobalRowView.swift
+//  ItemMainView.swift
 //  ACNHS
 //
 //  Created by Mickael PAYAN on 12/05/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RowMainView: View {
+struct ItemMainView: View {
     
     @State var fileName: String
     @State var image: String
@@ -26,7 +26,6 @@ struct RowMainView: View {
                 image
                     .resizable()
                     .scaledToFit()
-//                    .colorMultiply(isTappedTwice ? .gray : .white)
                     .shadow(color: .black, radius: 4, x: -8, y: 8)
                     .padding()
             } placeholder: { }
@@ -48,9 +47,9 @@ struct RowMainView: View {
 }
 
 
-struct RowMainView_Previews: PreviewProvider {
+struct ItemMainView_Previews: PreviewProvider {
     static var previews: some View {
-        RowMainView(
+        ItemMainView(
             fileName: "Fish name",
             image: "https://acnhapi.com/v1/icons/fish/1",
             price: 900,

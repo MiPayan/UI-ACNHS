@@ -17,35 +17,42 @@ struct FossilsMainView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 3)) {
-                    ForEach(fossilViewModel.fossils) { fossil in
-                        NavigationLink(
-                            destination: FossilDetailsView(
-                                fossilDetailsViewModel: FossilDetailsViewModel(fossil: fossil),
-                                bodyFossilDetailsViewModel: BodyFossilDetailsViewModel(fossil: fossil),
-                                fossilDetailsGridViewModel: FossilDetailsGridViewModel(fossil: fossil)
-                            )
-                        ) {
-                            RowMainView(
-                                fileName: fossil.fileName,
-                                image: fossil.imageURI,
-                                price: fossil.price,
-                                backgroundColor: Color("ColorBrownHeart")
-                            )
+            switch fossilViewModel.state {
+            case .success:
+                ScrollView {
+                    LazyVGrid(columns: GridSetting().gridLayout(numberPerRow: 3)) {
+                        ForEach(fossilViewModel.fossils) { fossil in
+                            NavigationLink(
+                                destination: FossilDetailsView(
+                                    fossilDetailsViewModel: FossilDetailsViewModel(fossil: fossil),
+                                    bodyFossilDetailsViewModel: BodyFossilDetailsViewModel(fossil: fossil),
+                                    fossilDetailsGridViewModel: FossilDetailsGridViewModel(fossil: fossil)
+                                )
+                            ) {
+                                ItemMainView(
+                                    fileName: fossil.fileName,
+                                    image: fossil.imageURI,
+                                    price: fossil.price,
+                                    backgroundColor: Color("ColorBrownHeart")
+                                )
+                            }
                         }
                     }
+                    .padding()
                 }
-                .padding()
-            }
-            .background(
-                LinearGradient(
-                    gradient: Gradient(colors: [Color("ColorBrownHeart"), Color(uiColor: .brown)]),
-                    startPoint: .bottom,
-                    endPoint: .top
+                .background(
+                    LinearGradient(
+                        gradient: Gradient(colors: [Color("ColorBrownHeart"), Color(uiColor: .brown)]),
+                        startPoint: .bottom,
+                        endPoint: .top
+                    )
                 )
-            )
-            .navigationBarHidden(true)
+                .navigationBarHidden(true)
+            case .loading:
+                LoadingView()
+            case .error:
+                ErrorView()
+            }
         }
         .onAppear {
             fossilViewModel.getFossilData()

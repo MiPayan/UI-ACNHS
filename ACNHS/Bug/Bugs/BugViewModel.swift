@@ -14,6 +14,7 @@ final class BugViewModel: ObservableObject {
     private let currentCalendar: CalendarProtocol
     @Published var bugs = [BugData]()
     @Published var state = StateEnum.loading
+    @AppStorage("OnBoarding") var isOnBoarding = true
     
     init(
         service: ACNHServiceProtocol = ACNHService(),
@@ -28,10 +29,11 @@ final class BugViewModel: ObservableObject {
     func getBugData() {
         state = .loading
         service.getBugsData { [weak self] result in
-            guard let self = self else { return }
+            guard let self else { return }
             switch result {
             case .success(let bug):
                 self.mainDispatchQueue.async {
+                    self.state = .success
                     self.bugs = bug
                 }
             case .failure:
